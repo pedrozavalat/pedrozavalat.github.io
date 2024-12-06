@@ -10,6 +10,7 @@ function Routing() {
                 <Route path="/" element={<App />} />
                 <Route path="/programming" element={<Programming />} />
                 <Route path="/math" element={<Math />} />
+                <Route path="*" element={<div>404 - Not Found</div>} />
             </Routes>
         </HashRouter>
     );
