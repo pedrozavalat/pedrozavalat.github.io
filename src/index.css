@@ -1,0 +1,64 @@
+
+a {
+  font-weight: 500;
+  color: #aeb2f6;
+  text-decoration: inherit;
+}
+/* a:hover {
+  color: #f8f8f8;
+  transform: scale(1.2);
+
+} */
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+body {
+  margin: 0;
+  margin-bottom: 10rem;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.0em;
+  
+}
+
+p, ul, li {
+  font-size: 1.2rem;
+}
+
+li {
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  p, ul, li {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  :root {
+    background: 
+      radial-gradient(circle at 0% 0%, #3822c6, transparent 10%),
+      radial-gradient(circle at 0% 10%, #7a2ba5b0, transparent 5%),
+      radial-gradient(circle at 80% 15%, #3822c6, transparent 10%),
+      radial-gradient(circle at 0% 35%, #220294, transparent 20%),
+      radial-gradient(circle at 30% 50%, #0c60b5, transparent 30%),
+      radial-gradient(circle at 100% 90%, #1c1f63, transparent 50%),
+      radial-gradient(circle at 0% 10%, #090b26 5%, transparent 40%),
+      radial-gradient(circle at 0% 20%, #ee055e, transparent 5%),
+      linear-gradient(-90deg, #0b0211 50%, #01000296),
+      radial-gradient(circle at 30% 80%, #390785, transparent 50%);
+    color: var(--primary);
+    overflow-x: hidden;
+  }
+  
+}

@@ -1,0 +1,165 @@
+:root {
+    --ND: #f36b6b;
+    --D: #7ae84b;
+    --O: #35bfff;
+    --X: #4e18acb5;
+}
+
+.horario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.horario table {
+    width: 100%;
+    height: 70vh;
+    border-collapse: separate; 
+    border-spacing: 10px; 
+    border-radius: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.horario table thead {
+    display: table-header-group; 
+}
+
+.horario table tbody {
+    display: table-row-group; 
+}
+
+.horario table tbody td {
+    padding: .5rem;
+    max-width: .1rem;
+    border-radius: .5rem;
+    font-size: 1.1rem;
+}
+
+#hour {
+    font-size: 1.1rem;
+    font-weight: 200;
+    min-width: .5rem;
+}
+
+.ND {
+    background-color: var(--ND);
+    color: var(--ND);
+}
+
+.D {
+    background-color: var(--D);
+    color: var(--D);
+}
+
+.O {
+    background-color: var(--O);
+    color: var(--O);
+}
+
+.X {
+    background-color: var(--X);
+    color: var(--X);
+}
+
+.ND, .X, .O, .D {
+    color: transparent;
+}
+
+.legends {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.legends span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.circle {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    display: block;
+}
+
+.downloading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: downloading 3s infinite;
+}
+
+@media (max-width: 990px) {
+    
+    .legends {
+        flex-direction: row;
+        justify-content: left;
+        align-items: start;
+        gap: 10px;
+        padding: 0;
+    }
+    .legends span {
+        margin: 0;
+        padding: 0;
+    }
+    .circle {
+        width: .5rem;
+        height: .5rem;
+    }
+    .legends span p {
+        margin: 0;
+        padding: 0;
+        font-size: .7rem;
+    }
+    .legends span {
+        margin: 0;
+        padding: 0;
+    }
+    .horario table thead th {
+        padding: .1rem;
+        max-width: 1rem;
+        min-height: .5rem;
+        height: 2rem;
+    }
+    .horario table tbody td {
+        font-size: .8rem;
+        padding: .1rem;
+        max-width: 1rem;
+        min-width: 1rem;
+        height: .5rem;
+        min-height: .5rem;
+        max-height: .5rem;
+    }
+
+    #hour {
+        font-size: .6rem;
+        font-weight: 200;
+        min-width: .3rem;
+    }
+    #title {
+        font-size: 10px;
+    }
+    #subtitle {
+        font-size: 8px;
+    }
+    
+}
+
+@keyframes downloading {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }   
+    100% {
+        opacity: 0;
+    }
+}

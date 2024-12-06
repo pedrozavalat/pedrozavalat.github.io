@@ -1,0 +1,27 @@
+
+.nav__toggler div {
+    width: 2.5rem;
+    height: 0.23rem;
+    margin: 0.4rem;
+    border-radius: .1rem;
+    background: white;
+    transition: 0.3s ease-in;
+    z-index: 11;
+}
+.nav__toggler {
+    display: block;
+    cursor: pointer;
+    padding: 1rem 1rem 0 0;
+}
+.nav__active {
+    transform: translateX(100%);
+}
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-10px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-8px, -5px);
+}
