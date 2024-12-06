@@ -1,11 +1,11 @@
-import { Routes, Route, HashRouter } from "react-router-dom"
+import { Routes, Route, HashRouter } from "react-router-dom";
 import App from "./pages/App";
 import Programming from "./pages/Programming";
 import Math from "./pages/Math";
 
 function Routing() {
     return (
-        <HashRouter basename="/">
+        <HashRouter basename="/home">
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/programming" element={<Programming />} />
@@ -15,4 +15,5 @@ function Routing() {
         </HashRouter>
     );
 }
-export default Routing
+
+export default Routing;
