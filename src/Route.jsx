@@ -7,7 +7,7 @@ function Routing() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/mypage" element={<App />} />
+                <Route path="/" element={<App />} />
                 <Route path="/programming" element={<Programming />} />
                 <Route path="/math" element={<Math />} />
             </Routes>
