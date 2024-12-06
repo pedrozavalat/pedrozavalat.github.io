@@ -5,7 +5,7 @@ import Math from "./pages/Math";
 
 function Routing() {
     return (
-        <HashRouter>
+        <HashRouter basename="/">
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/programming" element={<Programming />} />
