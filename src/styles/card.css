@@ -25,6 +25,12 @@
     margin: 5px;
 }
 
+.line {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.242);
+    padding: .5rem 0;
+    display: none;
+}
+
 .relevant {
     background-color: #2116525d;
     color: #bd7df6ca;

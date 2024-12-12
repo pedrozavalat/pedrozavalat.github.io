@@ -5,10 +5,10 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 import './Home.css'
+import Loading from "../../components/Loading/Loading";
 
 function Home() {
   const [init, setInit] = useState(false);
-  const color1 = "#ffecd1";
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -93,7 +93,7 @@ function Home() {
     [],
   );
 
-  
+
   if (init) {
     return (
       <>
@@ -108,15 +108,13 @@ function Home() {
           options={options}
           style={{ zIndex: -1 }}
         />
-
       </>
     );
   }
-  
+
   return (
-    <div className="home" >
-      <h1>Pedro Pablo Zavala Tejos</h1>
-      <Contact showResume={true} custom={'home-card'} />
+    <div style={{backgroundColor: '#001524', height: '100%', position: 'absolute', padding: 0, margin: 0, width: '100%', top: 0, left: 0}}>
+      <Loading />
     </div>
   )
 }

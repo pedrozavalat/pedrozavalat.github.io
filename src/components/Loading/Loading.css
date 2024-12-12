@@ -1,0 +1,26 @@
+.loading {
+    margin: 0 auto;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    height: 12rem;
+    width: 12rem;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: rotate(0) translate(-50%, -50%);
+    }
+    50% {
+        transform: scale(1.05) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+    
+}
