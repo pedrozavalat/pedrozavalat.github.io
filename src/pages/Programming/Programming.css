@@ -71,11 +71,6 @@ a {
     text-decoration: inherit;
 }
 
-/* a:hover {
-    color: #f8f8f8;
-    transform: scale(1.2);
-  
-  } */
 
 html {
     scroll-behavior: smooth;

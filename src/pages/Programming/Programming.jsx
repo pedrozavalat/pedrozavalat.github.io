@@ -1,6 +1,6 @@
-import Info from '../components/Info/Info'
-import NavBar from '../components/Navbar/Navbar'
-import './App.css'
+import Info from '../../components/Info/Info'
+import NavBar from '../../components/Navbar/Navbar'
+import '../Home/Home.css'
 import './Programming.css'
 
 

@@ -55,7 +55,7 @@ ${formData.comentarios || 'No especificado'}
 
     return (
         <>
-            <h1 id='formulario'>Agendar una clase</h1>
+            <h1 id='programming/#formulario'>Agendar una clase</h1>
             <p>Especifica todos los aspectos que necesitas para tu clase en este formulario y envía la información directamente 🎉</p>
             <form className="card" onSubmit={handleSubmit}>
                 <fieldset>

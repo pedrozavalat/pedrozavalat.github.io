@@ -25,7 +25,15 @@
     margin: 5px;
 }
 
-.card-mini {
+.relevant {
+    background-color: #2116525d;
+    color: #bd7df6ca;
+    margin: 2rem 0 0 0;
+    width: 90%;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 10px;
 
 }
 

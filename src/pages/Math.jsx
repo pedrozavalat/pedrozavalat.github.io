@@ -1,9 +1,11 @@
-
+import { MdWorkHistory } from 'react-icons/md';
 export default function Math() {
     return (
         <>
-        <h1>Proximamente!</h1>
-        <p style={{fontSize: 150, padding: 0, margin: 0}}>👀</p>
+        <div class="programming-background">
+            <h1>Working on ... </h1>
+            <MdWorkHistory style={{width: 100, height: 200}}/>
+        </div>
         </>
     )
 }

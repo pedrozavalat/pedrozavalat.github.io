@@ -14,6 +14,9 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.7.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.7.1",
     "@vitejs/plugin-react": "^4.3.4",
     "animate.css": "^4.1.1",
     "dotenv": "^16.4.5",

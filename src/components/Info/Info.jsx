@@ -4,8 +4,9 @@ import './Info.css';
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdMail } from 'react-icons/md';
+import { MdDocumentScanner, MdMail } from 'react-icons/md';
 import { Typewriter } from 'react-simple-typewriter'
+import { IoIosDocument } from "react-icons/io";
 import React from 'react';
 import Font, { Text } from 'react-font';
 import Horario from '../Horario/Horario';
@@ -146,7 +147,7 @@ const Availability = () => {
     )
 }
 
-const Contact = () => {
+export const Contact = ({showWhatsApp, showResume, custom}) => {
     const generateWhatsAppLink = (phoneNumber, message) => {
         const encodedMessage = encodeURIComponent(message);
         return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -157,8 +158,7 @@ const Contact = () => {
 
     return (
         <>
-        <h1>Contacto </h1>
-        <div className='card row' id='contacto'>
+        <div className={`card ${custom} row `} id='contacto'>
             <div className="col">
                 <h2>Email</h2>
                 
@@ -166,12 +166,22 @@ const Contact = () => {
                     <MdMail size={50} />
                 </a>
             </div>
+            {showWhatsApp && 
             <div className="col">
                 <h2>WhatsApp</h2>
                     <a href={whatsAppLink} target="_blank" rel="noopener noreferrer">
                     <FaWhatsapp size={50} />
                     </a>
             </div>
+            }
+            {showResume && 
+            <div className="col">
+            <h2>CV</h2>
+                <a  target="_blank" rel="noopener noreferrer">
+                <IoIosDocument size={50} />
+                </a>
+            </div>
+            }
             <div className="col">
                 <h2>Linkedin</h2>
                 <a href="https://www.linkedin.com/in/pedro-pablo-zavala-tejos-671203244/" target="_blank" rel="noopener noreferrer">
@@ -199,6 +209,7 @@ const Contact = () => {
 function Info() {
     return (
         <>
+        {/* Cambiar a programming ...  */}
         <Font family='Raleway'>
             <Header />
             
@@ -223,7 +234,8 @@ function Info() {
             
             
             <AnimationOnScroll animateIn="animate__slideInUp" animateOnce={true} offset={200}>
-                <Contact />
+                <h1>Contacto </h1>
+                <Contact showWhatsApp={true} showResume={false}/>
             </AnimationOnScroll>
 
 
