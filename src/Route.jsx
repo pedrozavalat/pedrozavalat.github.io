@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 
 function Routing() {
     return (
-        <HashRouter>
+        <HashRouter basename="/">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/programming" element={<Programming />} />
