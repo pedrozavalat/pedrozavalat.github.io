@@ -156,26 +156,33 @@ export const Contact = ({ showWhatsApp, showResume, custom }) => {
   const message = '¡Hola! Estoy interesado en tener una clase de programación :)';
   const whatsAppLink = generateWhatsAppLink(phoneNumber, message);
 
-  const cvLink = 'https://cors-anywhere.herokuapp.com/https://www.dropbox.com/scl/fi/b44dfk90p4y7hjj99u0be/OFICIAL_CV.pdf?rlkey=fp7hddt4lj9171m2f0wgfnex6&dl=1';
-
+  const cvLink = 'https://raw.githubusercontent.com/pedrozavalat/home/main/public/docs/OFICIAL_CV.pdf';
   const cvName = 'CV_PedroPabloZavalaTejos.pdf'
 
   const downloadCV = async () => {
     try {
       const response = await fetch(cvLink);
       if (!response.ok) throw new Error('Error al descargar el archivo');
+  
+      // Convierte la respuesta en un Blob
       const blob = await response.blob();
       const downloadUrl = URL.createObjectURL(blob);
   
+      // Crea un enlace temporal para descargar el archivo
       const a = document.createElement('a');
       a.href = downloadUrl;
-      a.download = 'OFICIAL_CV.pdf';
-      a.click();
+      a.download = cvName; // Usa la variable cvName para el nombre del archivo
+      document.body.appendChild(a); // Agrega el enlace al DOM
+      a.click(); // Simula el clic para iniciar la descarga
+      a.remove(); // Limpia el DOM
+  
+      // Revoca la URL temporal para liberar memoria
       URL.revokeObjectURL(downloadUrl);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error al descargar el archivo:', error);
     }
   };
+  
   
 
 
@@ -208,9 +215,8 @@ export const Contact = ({ showWhatsApp, showResume, custom }) => {
         {showResume &&
           <><div className="col">
             <h2>CV</h2>
-            <a href={cvLink} download="OFICIAL_CV.pdf">
-            </a>
-            <a target="_blank" rel="noopener noreferrer" onClick={downloadCV}>
+            {/* <a target="_blank" rel="noopener noreferrer" onClick={downloadCV}> */}
+            <a target="_blank" rel="noopener noreferrer">
               <IoIosDocument size={50} />
             </a>
           </div>
