@@ -2,18 +2,16 @@ import '../../styles/card.css';
 import '../../styles/fonts.css';
 import './Info.css';
 import "animate.css/animate.min.css";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdDocumentScanner, MdMail } from 'react-icons/md';
 import { Typewriter } from 'react-simple-typewriter'
 import { IoIosDocument } from "react-icons/io";
 import React, { useEffect } from 'react';
-import Font, { Text } from 'react-font';
+import { Text } from 'react-font';
 import Horario from '../Horario/Horario';
 import myimg from '../../../public/me.jpg';
-import Form from '../Form/Form';
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <section className='section-title'>
@@ -41,9 +39,9 @@ const Header = () => {
 
 }
 
-const General = () => {
+export const General = ({generalId}) => {
   return (
-    <section className='info-container' id='general'>
+    <section className='info-container' id={generalId}>
       <h1>Informacion general </h1>
       <div className='card'>
         <p>
@@ -64,7 +62,7 @@ const General = () => {
   )
 }
 
-const Prices = () => {
+export const Prices = () => {
   return (
     <>
       <h1>Modalidades y Precios</h1>
@@ -88,9 +86,9 @@ const Prices = () => {
   )
 }
 
-const Experience = () => {
+export const Experience = () => {
   return (
-    <section className='info-container' id='sobre-mi'>
+    <section className='info-container' id='programming/#sobre-mi'>
       <h1>Sobre mi </h1>
       <div className='card'>
         <div className="information">
@@ -134,9 +132,9 @@ const Experience = () => {
   )
 }
 
-const Availability = () => {
+export const Availability = () => {
   return (
-    <section className='info-container' id='horarios'>
+    <section className='info-container' id='programming/#horarios'>
       <h1>Horarios Disponibles </h1>
       <p>Idealmente agendar con <span className='bolder'>3 días de anticipación</span>. </p>
       <div className="card">
@@ -163,11 +161,11 @@ export const Contact = ({ showWhatsApp, showResume, custom }) => {
     try {
       const response = await fetch(cvLink);
       if (!response.ok) throw new Error('Error al descargar el archivo');
-  
+
       // Convierte la respuesta en un Blob
       const blob = await response.blob();
       const downloadUrl = URL.createObjectURL(blob);
-  
+
       // Crea un enlace temporal para descargar el archivo
       const a = document.createElement('a');
       a.href = downloadUrl;
@@ -175,20 +173,20 @@ export const Contact = ({ showWhatsApp, showResume, custom }) => {
       document.body.appendChild(a); // Agrega el enlace al DOM
       a.click(); // Simula el clic para iniciar la descarga
       a.remove(); // Limpia el DOM
-  
+
       // Revoca la URL temporal para liberar memoria
       URL.revokeObjectURL(downloadUrl);
     } catch (error) {
       console.error('Error al descargar el archivo:', error);
     }
   };
-  
-  
+
+
 
 
   return (
     <>
-      <div className={`card ${custom} row `} id='contacto'>
+      <div className={`card ${custom} row `} id='programming/#contacto'>
         <div className="col">
           <h2>Email</h2>
 
@@ -215,8 +213,7 @@ export const Contact = ({ showWhatsApp, showResume, custom }) => {
         {showResume &&
           <><div className="col">
             <h2>CV</h2>
-            {/* <a target="_blank" rel="noopener noreferrer" onClick={downloadCV}> */}
-            <a target="_blank" rel="noopener noreferrer">
+            <a target="_blank" rel="noopener noreferrer" onClick={downloadCV}>
               <IoIosDocument size={50} />
             </a>
           </div>
@@ -250,43 +247,4 @@ export const Contact = ({ showWhatsApp, showResume, custom }) => {
   );
 }
 
-
-function Info() {
-  return (
-    <>
-      {/* Cambiar a programming ...  */}
-      <Font family='Raleway'>
-        <Header />
-
-        <AnimationOnScroll animateIn="animate__slideInLeft" animateOnce={true} offset={500}>
-          <General />
-        </AnimationOnScroll>
-        <AnimationOnScroll animateIn="animate__slideInRight" animateOnce={true} offset={500}>
-          <Prices />
-        </AnimationOnScroll>
-
-        <AnimationOnScroll animateIn="animate__slideInLeft" animateOnce={true} offset={500}>
-          <Availability />
-        </AnimationOnScroll>
-
-        <AnimationOnScroll animateIn="animate__slideInRight" animateOnce={true} offset={500}>
-          <Experience />
-        </AnimationOnScroll>
-
-        <AnimationOnScroll animateIn="animate__slideInLeft" animateOnce={true} offset={500}>
-          <Form />
-        </AnimationOnScroll>
-
-
-        <AnimationOnScroll animateIn="animate__slideInUp" animateOnce={true} offset={200}>
-          <h1>Contacto </h1>
-          <Contact showWhatsApp={true} showResume={false} />
-        </AnimationOnScroll>
-
-
-      </Font>
-    </>
-  )
-};
-
-export default Info;
+export default Contact;

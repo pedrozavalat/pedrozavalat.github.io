@@ -4,34 +4,31 @@ import { useNavbarContext } from "../NavbarContext.jsx";
 import './Menu.css';
 
 
-export const Menu = () => {
+export const Menu = ({ children }) => {
     const { closeMenu } = useNavbarContext();
-    const BASE_PATH = "#programming/"
     return (
         <>
             <div className={`menu ${handleMenuAction(closeMenu)}`} >
-                <MenuItems basePath={BASE_PATH} />
+                <MenuItems>
+                    {children}
+                </MenuItems>
             </div>
         </>
     )
 }
 
-const MenuItems = ({basePath}) => {
+const MenuItems = ({ children }) => {
     return (
         <>
             <MenuToggle />
-            <a href="#programming/#general">General</a>
-            <a href="#programming/#horarios">Horarios</a>
-            <a href="#programming/#sobre-mi">Sobre mi</a>
-            <a href="#programming/#formulario">Agendar</a>
-            <a href="#programming/#contacto">Contacto</a>
+            {children}
         </>
     )
 }
 
-export const MenuToggle = () => {
+export const MenuToggle = ({position}) => {
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'end', position: position }}>
             <MenuIcon />
         </div>
     )

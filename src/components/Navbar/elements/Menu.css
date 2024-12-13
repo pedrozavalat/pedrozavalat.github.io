@@ -4,6 +4,7 @@
     display: flex;
     padding: 0 0 0 30px;
     cursor: pointer;
+    z-index: 3;
 }
 .menu {
     background: linear-gradient(rgb(47, 22, 71), rgb(14, 14, 101));

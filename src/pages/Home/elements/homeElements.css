@@ -1,0 +1,114 @@
+.home-navbar {
+    justify-content: center;
+    gap: 1rem;
+    width: 20%;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    color: white;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background-color: #092234;
+    transition: all 0.5s ease-in-out;
+    left: 0;
+    right: 0;
+    top: 10%;
+}
+
+.home-navbar a {
+    color: #00ffff;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+.home-navbar a:hover {
+    color: #dfdfdf;
+} 
+
+.home-navbar.show {
+    top: 15%;
+}
+
+.home-navbar.hide {
+    top: -20%;
+}
+
+
+.show-navbar-button {
+    cursor: pointer;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: #dfdfdf;
+    border: transparent;
+    display: block;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.show-navbar-button.bounce {
+    animation: bounceSometimes 0.5s ease-in-out;
+}
+
+.show-navbar-button, .home-navbar {
+    box-shadow: 0 10px 5px  rgba(0, 0, 0, 0.38);
+}
+
+
+.show-navbar-button.active {
+    transform: rotate(180deg);
+}
+
+.show-navbar-button .icon {
+    color: #092234;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.show-navbar-button .icon:hover {
+    color:#055757;
+}
+
+@media (max-width: 700px) {
+    .home-navbar {
+        width: 55%;
+        height: fit-content;
+    }
+
+    .home-navbar.show {
+        top: 13%;
+    }
+
+    .home-navbar.hide {
+        top: -30%;
+    }
+}
+
+@keyframes bounceSometimes {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(0);
+        
+    }
+    75% {
+        transform: translateY(-20px);
+    }    
+    100% {
+        transform: translateY(0);
+        
+    }
+
+}
