@@ -1,14 +1,12 @@
+.width-85 {
+  width: 100%;
+}
 
 a {
   font-weight: 500;
   color: #aeb2f6;
   text-decoration: inherit;
 }
-/* a:hover {
-  color: #f8f8f8;
-  transform: scale(1.2);
-
-} */
 
 html {
   scroll-behavior: smooth;

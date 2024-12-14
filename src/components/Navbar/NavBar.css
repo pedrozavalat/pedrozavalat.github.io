@@ -4,12 +4,11 @@
     width: 100%;
     margin: 0;
     max-height: 3.5rem;
-    top: 0;
     position: fixed;
     justify-content: flex-end;
     gap: 1rem;
     padding: .8rem 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 .navbar p {

@@ -1,0 +1,15 @@
+.notfound-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(25, 32, 42);
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 2rem 0;
+}
+
+.notfound-card {
+    color: rgb(56, 208, 235);
+    background-color: rgb(51, 64, 85);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}

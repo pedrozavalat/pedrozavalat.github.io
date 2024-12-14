@@ -1,0 +1,45 @@
+
+.row {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0 auto;
+
+}
+
+.col {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0;
+    }
+
+}
+
+.col a:hover {
+    color: white;
+    /* transform: scale(1.3); */
+    transition: all .2s ease-in-out;
+}

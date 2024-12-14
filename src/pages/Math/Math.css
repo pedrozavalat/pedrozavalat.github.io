@@ -1,0 +1,55 @@
+:root {
+    --math-color-1: #ffffff;
+    --math-color-2: #f59907;
+    --math-color-3: #ecebf5;
+}
+
+.math-background {
+    background:white;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    color: rgb(61, 61, 61);
+
+}
+
+.math-landing-page-img {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    object-fit: contain;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    /* transform: translate(20%, 20%); */
+    z-index: -1;
+}
+.math-background-card {
+    z-index: 1;
+    width: 30rem;
+    height: 30rem;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1rem;
+    margin-top: 12rem;
+    margin-left: 5rem;
+}
+.math-background-card p {
+    color: var(--math-color-3);
+    font-weight: 100;
+    line-height: 1.5;
+}
+.math-background-card h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--math-color-1);
+    margin: 0;
+}
+
