@@ -33,11 +33,30 @@
 .home-navbar.hide {
     top: -20%;
 }
-
+.home-navbar-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #020b11c9;
+    filter: blur(0);
+    transition: all 1s ease-in-out;
+    opacity: 0;
+}
+.home-navbar-layout.show {
+    opacity: 1;
+    z-index: 2;
+}
+.home-navbar-layout.hide {
+    opacity: 0;
+    z-index: -1;
+    
+}
 
 .show-navbar-button {
     cursor: pointer;
-    z-index: 1;
+    z-index: 3;
     left: 0;
     right: 0;
     position: absolute;

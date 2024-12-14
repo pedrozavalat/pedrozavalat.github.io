@@ -12,7 +12,7 @@ function Home() {
   const [active, setActive] = useState(false);
   const [initPos, setInitPos] = useState('hide');
   const [loading, setLoading] = useState(true)
-
+  
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -36,7 +36,7 @@ function Home() {
         <Link to={'math'}>Math classes</Link>
       </HomeNavbar>
       <HomeOverview />
-      <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} style={{ zIndex: -3 }} />
+      <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} style={{ zIndex: -3}} />
     </>
   )
 }

@@ -10,9 +10,13 @@ import Line from "../../../components/Line/Line";
 
 export const HomeNavbar = ({ children, initPos }) => {
     return (
+        <>
+        <div className={`home-navbar-layout ${initPos}`}>
+        </div>
         <nav className={`home-navbar ${initPos}`} >
             {children}
         </nav>
+        </>
     );
 }
 
