@@ -5,7 +5,7 @@
 }
 
 .math-background {
-    background:white;
+    background:rgb(255, 255, 255);
     position: absolute;
     width: 100%;
     top: 0;
@@ -13,8 +13,12 @@
     z-index: -2;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    color: rgb(61, 61, 61);
+    color: rgb(246, 246, 255);
+}
 
+.math-background h1 {
+    color: rgba(37, 149, 255, 0.916);
+    text-shadow: 4px 4px #0d0d0d3c;
 }
 
 .math-landing-page-img {
@@ -37,7 +41,7 @@
     flex-direction: column;
     text-align: left;
     padding: 1rem;
-    margin-top: 12rem;
+    margin-top: 6rem;
     margin-left: 5rem;
 }
 .math-background-card p {
@@ -53,3 +57,18 @@
     margin: 0;
 }
 
+.math-navbar {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    gap: 5rem;
+    margin-right: 5vw;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.math-navbar a {
+    color:#f59907;
+    font-weight: 300;
+    font-size: 1.2rem;
+}

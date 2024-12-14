@@ -74,6 +74,9 @@
     transition: all 100ms ease-out;
     z-index: -1;
 }
+.button-77 a {
+    color: #fff;
+}
 
 .button-77:hover:not(:disabled):after {
     bottom: 0;
@@ -138,6 +141,10 @@
     width: auto;
     word-break: keep-all;
     z-index: 0;
+}
+
+.button-78 a {
+    color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -252,3 +259,5 @@
         width: 150px;
     }
 }
+
+

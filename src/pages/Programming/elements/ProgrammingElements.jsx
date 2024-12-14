@@ -68,20 +68,22 @@ export const ProgrammingPrices = () => {
         <>
             <h1>Modalidades y Precios</h1>
             <Card styles={['container-programming']}>
-                <div className='row'>
-                    <div className='col card-style-1' >
+                <Row>
+                    <Column styles={['card-style-1']}>
                         <h3>Modalidad Online</h3>
                         <p>$20.000 por hora</p>
-                    </div>
-                    <div className='col card-style-1'>
+                    </Column>
+                    <Column styles={['card-style-1']}>
                         <h3>Modalidad Presencial (*)</h3>
                         <p>$25.000 por hora</p>
-                    </div>
+                    </Column>
+                </Row>
+                <Row>
                     <p>
                         (*) Solamente en lugares como: Colina, Chicureo, y alrededores. También puede
                         ser en el Campus San Joaquín de la PUC.
                     </p>
-                </div>
+                </Row>
             </Card>
         </>
     )
@@ -92,26 +94,29 @@ export const ProgrammingExperience = () => {
         <section className='info-container' id='programming/#sobre-mi'>
             <h1>Sobre mi </h1>
             <Card styles={['container-programming']}>
-                <div className="information">
-                    <img src={myimg} alt="Yo" />
-                    <article>
+                <Row>
+                    <Column>
+                        <img src={myimg} alt="Yo" />
+                    </Column>
+                    <Column>
                         <p>
                             Soy estudiante de 4to año de Ingeniería Civil en la Pontificia Universidad Católica de Chile,
                             con major en Computación y Sistemas de Información y un minor en Data Science & Analytics.
-                        </p>
-                        <p>
+                            
                             Tengo experiencia en docencia, realizando clases particulares y además he sido ayudantes en cursos de programación,
                             como Programación Avanzada (IIC2233) en los semestres 2023-1, 2023-2 y 2024-1.
                         </p>
-                    </article>
-                </div>
+                    </Column>
+                </Row>
+                <Row>
+                    <p><span className='bolder'>Lenguajes de programación que manejo:</span> Python, C, JavaScript, SQL, Ruby, entre otros.</p>
+                </Row>
+                <Row>
+                    <button className='button-69'>
+                        <a href="https://www.linkedin.com/in/pedro-pablo-zavala-tejos-671203244/" target='_blank'>Mas información</a>
+                    </button>
+                </Row>
 
-                <p>
-                    <span className='bolder'>Lenguajes de programación que manejo:</span> Python, C, JavaScript, SQL, Ruby, entre otros.
-                </p>
-                <button className='button-69'>
-                    <a href="https://www.linkedin.com/in/pedro-pablo-zavala-tejos-671203244/" target='_blank'>Mas información</a>
-                </button>
             </Card>
         </section>
     )
@@ -138,36 +143,6 @@ export const ProgrammingContact = ({ showWhatsApp, showResume, custom }) => {
     const phoneNumber = '56952231388';
     const message = '¡Hola! Estoy interesado en tener una clase de programación :)';
     const whatsAppLink = generateWhatsAppLink(phoneNumber, message);
-
-    const cvLink = 'https://raw.githubusercontent.com/pedrozavalat/home/main/public/docs/OFICIAL_CV.pdf';
-    const cvName = 'CV_PedroPabloZavalaTejos.pdf'
-
-    const downloadCV = async () => {
-        try {
-            const response = await fetch(cvLink);
-            if (!response.ok) throw new Error('Error al descargar el archivo');
-
-            // Convierte la respuesta en un Blob
-            const blob = await response.blob();
-            const downloadUrl = URL.createObjectURL(blob);
-
-            // Crea un enlace temporal para descargar el archivo
-            const a = document.createElement('a');
-            a.href = downloadUrl;
-            a.download = cvName; // Usa la variable cvName para el nombre del archivo
-            document.body.appendChild(a); // Agrega el enlace al DOM
-            a.click(); // Simula el clic para iniciar la descarga
-            a.remove(); // Limpia el DOM
-
-            // Revoca la URL temporal para liberar memoria
-            URL.revokeObjectURL(downloadUrl);
-        } catch (error) {
-            console.error('Error al descargar el archivo:', error);
-        }
-    };
-
-
-
 
     return (
         <>

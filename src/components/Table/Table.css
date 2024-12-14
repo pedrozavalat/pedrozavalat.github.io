@@ -2,12 +2,12 @@
 .row {
     width: auto;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-around;
     flex-direction: row;
     margin: 0 auto;
-
 }
+
 
 .col {
     width: max-content;
