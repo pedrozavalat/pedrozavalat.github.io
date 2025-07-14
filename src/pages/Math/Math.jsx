@@ -1,6 +1,6 @@
 import '../../styles/buttons.css';
 import './Math.css';
-import ImgOverview from '../../../public/wallpaper.png';
+import ImgOverview from '../../../public/img-ex-3.png';
 import Horario from '../../components/Horario/Horario';
 import Card from '../../components/Card/Card';
 import myImg from '../../../public/me.jpg';
@@ -9,6 +9,9 @@ import { FaLightbulb } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { MdMail } from 'react-icons/md';
+import ColorfulBlobs from '../../components/Canvas/ColorfulBlob';
+import Blob from '../../components/Canvas/Blob';
+import StretchedBlob from '../../components/Canvas/StretchedBlob';
 
 const MathNavbar = ({ children }) => {
     return (
@@ -149,12 +152,17 @@ export const MathContact = () => {
 export default function Math() {
     return (
         <div className='math-background'>
+            
             <MathNavbar>
                 <a href=''>Precios</a>
                 <a>Horarios</a>
                 <a>Sobre mi</a>
                 <a>Contacto</a>
             </MathNavbar>
+            {/* <Blob
+                color="red"
+                style={{ position: "absolute", top: "30%", left: "20%", width: "500px" }}
+            /> */}
             <MathOverview />
             <MathPrices />
             <MathAvailability />

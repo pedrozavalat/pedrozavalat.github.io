@@ -1,15 +1,14 @@
 .card {
     padding: 40px;
     text-align: left;
-    width: 50vw;
     margin: auto;
 }
 .card img {
     display: block;
     min-width: 15rem;
-    padding: 1rem;
-    margin: 0 auto;
-    border-radius: 2rem;
+    /* padding: 1rem; */
+    /* margin: 0 auto; */
+    border-radius: .25rem;
 }
 
 .card-style-1 {

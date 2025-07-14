@@ -5,7 +5,11 @@
 }
 
 .math-background {
-    background:rgb(255, 255, 255);
+    background-image: url(../../../public/stacked-waves-haikei_2.svg);
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+    background-position: center; /* Centra la imagen en el fondo */
+    
     position: absolute;
     width: 100%;
     top: 0;
@@ -13,22 +17,21 @@
     z-index: -2;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    color: rgb(246, 246, 255);
+    color: rgb(111, 111, 111);
 }
 
 .math-background h1 {
-    color: rgba(37, 149, 255, 0.916);
-    text-shadow: 4px 4px #0d0d0d3c;
+    color: rgba(83, 83, 83, 0.916);
 }
 
 .math-landing-page-img {
-    width: 100vw;
+    width: 40vw;
     height: auto;
     display: flex;
     object-fit: contain;
     position: absolute;
-    left: 0%;
-    top: 0%;
+    right: 0%;
+    /* top: 0%; */
     /* transform: translate(20%, 20%); */
     z-index: -1;
 }
@@ -60,15 +63,15 @@
 .math-navbar {
     position: relative;
     display: flex;
-    justify-content: end;
+    justify-content: start;
     gap: 5rem;
-    margin-right: 5vw;
+    margin-left: 4vw;
     flex-direction: row;
     padding: 2rem;
 }
 
 .math-navbar a {
-    color:#f59907;
-    font-weight: 300;
-    font-size: 1.2rem;
+    color:#ffab23;
+    font-weight: 400;
+    font-size: 1.5rem;
 }
