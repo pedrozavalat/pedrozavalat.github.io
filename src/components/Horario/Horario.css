@@ -59,7 +59,7 @@
 }
 
 .X {
-    background-color: var(--X);
+    background-color: rgba(0, 0, 0, 0.242);
     color: var(--X);
 }
 

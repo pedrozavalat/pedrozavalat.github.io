@@ -1,12 +1,20 @@
-import Info from '../../components/Info/Info'
-import NavBar from '../../components/Navbar/Navbar'
+
 import '../Home/Home.css'
 import './Programming.css'
 import "animate.css/animate.min.css";
+import Font from 'react-font';
+import ProgrammingForm from './elements/ProgrammingForm';
+import NavBar from '../../components/Navbar/Navbar'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
-import Font, { Text } from 'react-font';
-import Form from '../../components/Form/Form';
-import { Header, General, Contact, Experience, Availability, Prices } from '../../components/Info/Info';
+import { Link } from 'react-router-dom';
+import {
+    ProgrammingAvailability,
+    ProgrammingContact,
+    ProgrammingExperience,
+    ProgrammingPrices,
+    ProgrammingHeader,
+    ProgrammingGeneral
+} from './elements/ProgrammingElements';
 
 
 function Programming() {
@@ -18,38 +26,30 @@ function Programming() {
                 <a href="#programming/#sobre-mi">Sobre mi</a>
                 <a href="#programming/#formulario">Agendar</a>
                 <a href="#programming/#contacto">Contacto</a>
-                <a href="/">Inicio</a>
+                <Link to={'/'}>Inicio</Link>
             </NavBar>
 
             <Font family='Raleway'>
-                <Header />
-
+                <ProgrammingHeader />
                 <AnimationOnScroll animateIn="animate__slideInLeft" animateOnce={true} offset={500}>
-                    <General generalId={"programming/#general"}/>
+                    <ProgrammingGeneral generalId={"programming/#general"} />
                 </AnimationOnScroll>
                 <AnimationOnScroll animateIn="animate__slideInRight" animateOnce={true} offset={500}>
-                    <Prices />
+                    <ProgrammingPrices />
                 </AnimationOnScroll>
-
                 <AnimationOnScroll animateIn="animate__slideInLeft" animateOnce={true} offset={500}>
-                    <Availability />
+                    <ProgrammingAvailability />
                 </AnimationOnScroll>
-
                 <AnimationOnScroll animateIn="animate__slideInRight" animateOnce={true} offset={500}>
-                    <Experience />
+                    <ProgrammingExperience />
                 </AnimationOnScroll>
-
                 <AnimationOnScroll animateIn="animate__slideInLeft" animateOnce={true} offset={500}>
-                    <Form />
+                    <ProgrammingForm />
                 </AnimationOnScroll>
-
-
                 <AnimationOnScroll animateIn="animate__slideInUp" animateOnce={true} offset={200}>
                     <h1>Contacto </h1>
-                    <Contact showWhatsApp={true} showResume={false} />
+                    <ProgrammingContact />
                 </AnimationOnScroll>
-
-
             </Font>
         </div>
     )

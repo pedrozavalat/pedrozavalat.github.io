@@ -1,0 +1,60 @@
+:root {
+    --loading-bg-color: #0097ff;
+
+}
+
+.loading-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: var(--loading-bg-color);
+}
+
+
+.loading-gif {
+    margin: 0 auto;
+    padding: 2rem;
+    position: absolute;
+    object-fit: contain;
+    display: block;
+    height: 80%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: rotate(0) translate(-50%, -50%);
+    }
+
+    50% {
+        transform: scale(1.05) translate(-50%, -50%);
+    }
+
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+}

@@ -18,7 +18,6 @@ function Horario() {
   });
 
   const preprocessData = (data) => {
-    // Asegúrate de que cada fila tenga 7 elementos
     data.forEach(row => {
       if (row.length === 5) {
         row.push(" ");
@@ -26,12 +25,10 @@ function Horario() {
       }
     });
 
-    // Asignar los valores de la primera fila a los días de la semana
-
     let firstRow = data[0];
     const days = firstRow.slice(1, 7).map(day => day[0]);
     setDays(days);
-    
+
     const nrows = data.length;
     const ncols = data[0].length;
     const newData = {
@@ -45,12 +42,10 @@ function Horario() {
 
     setHours(data.slice(1, nrows).map(row => row[0]));
 
-    // Procesar los datos y asignarlos a newData
     for (let i = 1; i < nrows; i++) {
       for (let j = 1; j < ncols; j++) {
         let cell = data[i][j];
 
-        // Manejar valores específicos
         switch (cell) {
           case "No Disponible":
             cell = "ND";
@@ -96,20 +91,7 @@ function Horario() {
         setIsOk(true);
       });
 
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreedID}/values/C6:I7?key=${apiKey}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const values = data.values;
-        setTitle(values[0][0]);
-        setSubtitle(values[1][0]);
-      })
-      .catch((error) => {
-        console.error('Error al obtener los datos:', error);
-      })
-      .finally(() => {
-        console.log("Datos cargados");
-        setIsOk(true);
-      });
+    
   }, [spreedID, apiKey]);
 
   if (!isOk) {
@@ -118,41 +100,41 @@ function Horario() {
 
   return (
     <>
-    <h2 id='title' style={{textAlign: 'center'}}>{title}</h2>
-    <p id='subtitle' style={{textAlign: 'center'}}>{subtitle}</p>
-    <div className='legends'>
-      <span>
-        <span className='circle D'></span><p>Disponible</p>
-      </span>
-      <span>
-        <span className='circle ND'></span><p>No disponible</p>
-      </span>
-    </div>
-    
-    <div className="horario">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            {days.map((day, index) => (
-              <th className='hora' key={index}>{day}</th>
-            ))}
-          </tr>
-        </thead>
-        
-        <tbody>
-          {hours.map((hour, rowIndex) => (
-            <tr key={rowIndex}>
-              <td id='hour'>{hour}</td>
-              {Object.keys(avaliability).map((dayKey, colIndex) => (
-                <td className={avaliability[dayKey][rowIndex]} key={colIndex}>{avaliability[dayKey][rowIndex]}</td>
+      <h2 id='title' style={{ textAlign: 'center' }}>{title}</h2>
+      <p id='subtitle' style={{ textAlign: 'center' }}>{subtitle}</p>
+      <div className='legends'>
+        <span>
+          <span className='circle D'></span><p>Disponible</p>
+        </span>
+        <span>
+          <span className='circle ND'></span><p>No disponible</p>
+        </span>
+      </div>
+
+      <div className="horario">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              {days.map((day, index) => (
+                <th className='hora' key={index}>{day}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </>
+          </thead>
+
+          <tbody>
+            {hours.map((hour, rowIndex) => (
+              <tr key={rowIndex}>
+                <td id='hour'>{hour}</td>
+                {Object.keys(avaliability).map((dayKey, colIndex) => (
+                  <td className={avaliability[dayKey][rowIndex]} key={colIndex}>{avaliability[dayKey][rowIndex]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 

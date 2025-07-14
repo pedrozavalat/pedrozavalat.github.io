@@ -1,4 +1,3 @@
-
 .section-title {
     /* margin: 10rem 0 18rem 0; */
     margin: 10rem auto;
@@ -45,12 +44,6 @@
     animation: fadeIn 1s;
     object-fit: contain;    
     
-}
-
-.col a:hover {
-    color: white;
-    /* transform: scale(1.3); */
-    transition: all .2s ease-in-out;
 }
 
 @keyframes fadeIn {

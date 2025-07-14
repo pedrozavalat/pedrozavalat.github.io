@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import './Form.css';
+import './ProgrammingForm.css';
+import '../../../styles/container.css';
 
-function Form() {
+
+const ProgrammingForm = () => {
     const [formData, setFormData] = useState({
         tipoDeClase: 'tareas-proyecto',
         contenidos: [],
@@ -57,7 +59,7 @@ ${formData.comentarios || 'No especificado'}
         <>
             <h1 id='programming/#formulario'>Agendar una clase</h1>
             <p>Especifica todos los aspectos que necesitas para tu clase en este formulario y envía la información directamente 🎉</p>
-            <form className="card" onSubmit={handleSubmit}>
+            <form className='container-programming' onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>Tipo de clase</legend>
                     <label htmlFor="tareas-proyecto">
@@ -255,10 +257,10 @@ ${formData.comentarios || 'No especificado'}
                         ></textarea>
                     </label>
                 </fieldset>
-                <input type="submit" value="Enviar mensaje" />
+                <input type="submit" value="Enviar mensaje" className='button-69'/>
             </form>
         </>
     );
 }
 
-export default Form;
+export default ProgrammingForm;
