@@ -74,7 +74,7 @@ body,
 }
 
 .home-card.project-card a {
-  font-weight: 100;
+  font-weight: 200;
   padding: 4px 10px;
   border-radius: 2px;
   font-size: 0.80rem;
@@ -94,6 +94,7 @@ body,
 }
 .home-card.project-card p {
   font-size: .9rem;
+  font-weight: 200;
 }
 
 /* .home-card.project-card p {
@@ -130,7 +131,7 @@ body,
 }
 
 .home-card p {
-  font-weight: 100;
+  font-weight: 200;
   font-size: .9rem;
   line-height: 2.0;
   color: rgb(68, 67, 67);
