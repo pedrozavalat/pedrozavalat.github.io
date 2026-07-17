@@ -7,70 +7,11 @@ import './HomeElements.css';
 import Card from "../../../components/Card/Card";
 import { Column, Row } from "../../../components/Table/Table";
 import Line from "../../../components/Line/Line";
-import MePhoto from "../../../../public/me.jpg";
+import MePhoto from "../../../../public/me1.png";
 import saviia from '../../../../public/saviia.png';
 import saviialib from '../../../../public/saviialib.png';
 import ProjectsCard from "./HomeProjects";
-
-const PROJECTS = [
-    {
-        title: "PISMA-WP: Platform for Intelligent Socio-Environmental Monitoring and Analysis",
-        date: "March 2026 - Present",
-        role: "Research Assistant / ETL and Backend Engineer",
-        description:
-            ["I contribute to the development of a socio-environmental monitoring platform for Western Patagonia. My work focuses on designing reproducible ETL pipelines and backend services for integrating satellite, geospatial, environmental, and locally collected data. I also support the development of APIs and data architectures that incorporate metadata, traceability, versioning, and quality-control mechanisms for the analysis and visualization of socio-environmental indicators."],
-    },
-    {
-        title: "SAVIIA and ECHO: Trusted Data Infrastructures for Field Science",
-        date: "March 2025 - Present",
-        role: "Research Assistant",
-        description:
-            [
-                "SAVIIA (Sistema de Administración y Visualización de Información para la Investigación y Análisis) and ECHO (Edge Computing and Hardware Orchestration) form a hybrid data infrastructure for UC’s Regional Field Stations Network (RCER). ECHO operates at the station level, coordinating local data acquisition, monitoring, and automation, while SAVIIA provides the centralized environment for storing, governing, integrating, and analyzing scientific and operational data. This edge-to-cloud architecture is designed to improve data traceability, reproducibility, and secure collaboration across research teams.",
-                "I joined the initiative as an Undergraduate Research Assistant and currently continue as a Research Assistant. At the pilot site, Estación Patagonia UC (EPII UC), I developed ECHO, a Home Assistant integration for orchestrating data acquisition workflows, monitoring sensors, executing automations, and interacting with local IoT devices, and EchoLib, a Python library that implements the connection and data-processing logic for heterogeneous sources such as FTP/SFTP servers, REST APIs, sensors, and cloud storage services. Together, both components support the automated extraction, validation, backup, synchronization, and monitoring of data in an environment with limited connectivity, restricted energy availability, and minimal on-site maintenance."
-            ],
-        code: [
-            {
-                label: "raxlab/echo",
-                href: "https://github.com/raxlab/echo",
-            },
-            {
-                label: "echo-lib / saviialib",
-                href: "https://github.com/pedrozavalat/echo-lib/tree/main/src/saviialib",
-            },
-        ],
-        related: [
-            {
-                label:
-                    "Ciencia de datos desde la Patagonia: investigación de pregrado mejora la gestión de datos científicos en la Estación UC",
-                href: "https://estacionpatagonia.uc.cl/ipre/ciencia-de-datos-desde-la-patagonia-investigacion-de-pregrado-mejora-gestion-de-datos-cientificos-en-la-estacion-uc/",
-            },
-        ],
-        talks: [
-            "ECHO: Plataforma de monitoreo y automatización para estaciones remotas, Pedro Zavala Catalina Ortega, May 14 2026, Congreso Ingeniería para Chile (IPch), PUC.",
-        ],
-    },
-    {
-        title: "ECHO ML-edge: Machine Learning at the Edge",
-        date: "March 2026 - Present",
-        role: "Research Assistant",
-        description:
-            ["I am working on the development and evaluation of machine-learning models using camera-trap datasets collected at Estación Patagonia UC. My work includes dataset preparation, animal detection, species classification, transfer learning, model evaluation, and experimentation with different computer-vision architectures. The broader objective is to develop an MLOps and edge-inference infrastructure that connects cloud-based model training with local inference in remote scientific stations."],
-    },
-    {
-        title: "SCORPIO: Satellite Communication and Radio Propagation for the Internet of Things",
-        date: "March - June 2026",
-        role: "Undergraduate Researcher",
-        description:
-            ["I designed and implemented an edge-to-cloud architecture for acquiring, processing, storing, transmitting, and visualizing satellite LoRa data. The system uses containerized edge services, MQTT-based communication, local SQLite storage, a REST API, and a web-based geospatial interface. It was designed to preserve experimental traceability and continue operating under intermittent connectivity, providing a foundation for distributed satellite signal-measurement stations."],
-        code: [
-            {
-                label: "ScorpioIoTUC",
-                href: "https://github.com/ScorpioIoTUC",
-            },
-        ],
-    },
-];
+import { PROJECTS } from './constants'
 
 const ProjectAccordion = ({ project }) => {
     const [open, setOpen] = useState(false);
@@ -88,7 +29,7 @@ const ProjectAccordion = ({ project }) => {
                     {project.subtitle ? <p className="project-accordion__subtitle">{project.subtitle}</p> : null}
                     <span className="project-accordion__meta">
                         <i>{project.date}</i>
-                        <i style={{color: '#ADADAD', fontWeight: 100}}>{project.role}</i>
+                        <i style={{ color: '#ADADAD', fontWeight: 100 }}>{project.role}</i>
                     </span>
                 </div>
                 <FaChevronDown className={`project-accordion__icon ${open ? 'is-open' : ''}`} aria-hidden="true" />
@@ -97,7 +38,7 @@ const ProjectAccordion = ({ project }) => {
             <div className={`project-accordion__content ${open ? 'is-open' : ''}`}>
                 {project.description.map((desc) => (
                     <>
-                    <p className="project-accordion__description">{desc}</p> <br />
+                        <p className="project-accordion__description">{desc}</p> <br />
                     </>
                 ))}
                 {project.code?.length ? (
@@ -105,10 +46,13 @@ const ProjectAccordion = ({ project }) => {
                         <h4>Code</h4>
                         <div className="project-accordion__links">
                             {project.code.map((link) => (
-                                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub style={{ verticalAlign: 'middle' }} />
-                                    {link.label}
-                                </a>
+                                <>
+                                    <br />
+                                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                                        <FaGithub style={{ verticalAlign: 'middle' }} />
+                                        {link.label}
+                                    </a><br /></>
+
                             ))}
                         </div>
                     </div>
@@ -117,24 +61,42 @@ const ProjectAccordion = ({ project }) => {
                 {project.related?.length ? (
                     <div className="project-accordion__section">
                         <h4>Related</h4>
-                        <div className="project-accordion__links">
+                        <ul className="project-accordion__links">
                             {project.related.map((link) => (
-                                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-                                    {link.label}
-                                </a>
+                                <li key={link.href}>
+                                    <a
+                                        className="project-accordion__related-link"
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.label}
+                                    </a>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 ) : null}
 
                 {project.talks?.length ? (
                     <div className="project-accordion__section">
                         <h4>Talks</h4>
-                        <div className="project-accordion__talks">
+                        <ul className="project-accordion__links">
+
                             {project.talks.map((talk) => (
-                                <p key={talk}>{talk}</p>
+                                <li key={talk.href}>
+                                    <a
+                                        className="project-accordion__related-link"
+                                        href={talk.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {talk.label}
+                                    </a>
+                                </li>
+                                // <li><p key={talk.label}>{talk.label}</p></li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 ) : null}
             </div>
@@ -267,8 +229,7 @@ export const ProfileCard = ({ isDarkMode }) => {
                 <p>Santiago, Chile</p>
             </section>
 
-            <div class="hline"></div>
-
+            {/* <div class="hline"></div> */}
             {/* <ul>
                 <a>About me</a>
                 <a>Projects</a>
@@ -312,13 +273,9 @@ export const ProfileCard = ({ isDarkMode }) => {
                 <p>
                     <IoIosDocument style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
                     <a
-                        href="https://raw.githubusercontent.com/pedrozavalat/home/main/public/docs/OFICIAL_CV.pdf"
+                        href="docs/OFICIAL_CV.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                            textDecoration: 'none'
-                        }}
-                        download="CV_PedroPabloZavalaTejos.pdf"
                     >
                         Download Resume (CV)
                     </a>
@@ -333,13 +290,13 @@ export const InformationCard = ({ isDarkMode }) => {
     return (
         <Card styles={[`home-card section-card`]} >
             <h2>About me</h2>
-            <div className="hline2"></div>
-            <p>I am a Computer Science Engineer from Pontificia Universidad Católica de Chile (PUC), with a Major in Computing and Information Systems and a Minor in Data Science and Analytics. My background combines software development, data-driven systems, and applied research, with experience building solutions for environmental monitoring, edge computing, and embedded systems.</p>
+            <p>I am a Computer Science Engineer from <a href="https://www.ing.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile (PUC)</a>, with a Major in Computing and Information Systems and a Minor in Data Science and Analytics. My background combines software development, data infrastructure, and applied research, with experience developing systems for environmental monitoring, edge computing, and embedded applications.</p>
+            
             <h2>Research interest</h2>
-            <p>I am interested in interdisciplinary projects that balance theory with practical solutions and focus on the development of IoT architectures and ETL pipelines. I am interested in Edge computing, Machine Learning & MLOps, data pipeline infrastructures, data-first systems.</p>
+            <p> My research interests lie in interdisciplinary projects that connect theoretical foundations with practical, real-world solutions. I am particularly interested in the design and development of <span style={{fontWeight: '500', color: 'gray'}}>IoT and edge computing architectures</span>, <span style={{fontWeight: '500', color: 'gray'}}>ETL and data pipelines</span>, and <span style={{fontWeight: '500', color: 'gray'}}>reliable data-intensive systems</span>. I am also interested in machine learning and MLOps, particularly when integrated into reproducible data workflows and distributed computing infrastructures. </p>
 
             <h2>Projects</h2>
-            <p>Across these projects, I have progressed from working as an Undergraduate Research Assistant to my current role as a Research Assistant. My work focuses on designing technical infrastructures that support scientific research, particularly in remote environments where data availability, connectivity, reproducibility, and system reliability are central challenges.</p>
+            <p>I first joined these projects as an Undergraduate Research Assistant and have continued contributing to them in my current role as a Research Assistant. My work focuses on designing and developing technical infrastructure for scientific research, particularly in remote environments where data availability, connectivity, reproducibility, and system reliability are key challenges.</p>
             {PROJECTS.map((project) => (
                 <ProjectAccordion key={project.title} project={project} />
             ))}

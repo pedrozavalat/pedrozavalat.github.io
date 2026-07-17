@@ -224,9 +224,19 @@
     margin-bottom: 0.35rem;
 }
 
+.project-accordion__section ul li {
+    margin-bottom: 0;
+    color: rgba(71, 125, 252, 0.75);
+}
+
 .project-accordion__links {
-    display: grid;
-    gap: 0.4rem;
+    padding-left: 1.25rem;
+    
+}
+
+.project-accordion__links li {
+    max-width: 100%;
+    margin: 5px 0;
 }
 
 .project-accordion__links a {
@@ -234,7 +244,78 @@
     align-items: center;
     gap: 0.45rem;
 }
+.home-card.project-card .project-accordion__related-link {
+    display: inline;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+    color: rgb(68, 67, 67);
+    font-size: 0.9rem;
+    line-height: 2;
+    text-decoration: none;
+}
 
+.home-card.project-card .project-accordion__related-link:hover,
+.home-card.project-card .project-accordion__related-link:focus-visible {
+    text-decoration: underline;
+}
 .project-accordion__talks p {
     margin: 0;
+}
+
+@media (max-width: 900px) {
+    .hline {
+        margin: 1.5rem 0;
+    }
+
+    .project-accordion__trigger {
+        align-items: center;
+    }
+
+    .project-accordion__summary {
+        min-width: 0;
+    }
+
+    .project-accordion__links a {
+        width: fit-content;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 600px) {
+    .hline {
+        margin: 1.25rem 0;
+    }
+
+    .project-accordion__trigger {
+        gap: 0.75rem;
+        padding: 0.9rem 0.85rem 0.8rem;
+    }
+
+    .project-accordion__meta {
+        display: grid;
+        gap: 0.3rem;
+        font-size: 0.8rem;
+    }
+
+    .project-accordion__content,
+    .project-accordion__content.is-open {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    .project-accordion__content.is-open {
+        padding-bottom: 0.9rem;
+    }
+
+    .project-accordion__icon {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
 }
