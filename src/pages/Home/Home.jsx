@@ -61,17 +61,17 @@ function Home() {
         <Link to={'programming'}>Programming classes</Link>
         <Link to={'math'}>Math classes</Link>
       </HomeNavbar> */}
-      <LightDarkModeToggle 
+      {/* <LightDarkModeToggle 
           isDarkMode={isDarkMode}
           toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
-      />
+      /> */}
       <HomeOverview isDarkMode={isDarkMode}/>
-      <Particles 
+      {/* <Particles 
         id="tsparticles" 
         particlesLoaded={particlesLoaded} 
         options={options} 
         style={{ zIndex: -3 }} 
-      />
+      /> */}
     </>
   )
 }

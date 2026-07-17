@@ -18,13 +18,13 @@
 }
 
 .home-navbar a {
-    color: #00ffff;
     font-weight: 200;
     font-size: 1.2rem;
 }
+
 .home-navbar a:hover {
     color: #dfdfdf;
-} 
+}
 
 .home-navbar.show {
     top: 15%;
@@ -33,6 +33,7 @@
 .home-navbar.hide {
     top: -20%;
 }
+
 .home-navbar-layout {
     position: fixed;
     top: 0;
@@ -44,14 +45,16 @@
     transition: all 1s ease-in-out;
     opacity: 0;
 }
+
 .home-navbar-layout.show {
     opacity: 1;
     z-index: 2;
 }
+
 .home-navbar-layout.hide {
     opacity: 0;
     z-index: -1;
-    
+
 }
 
 .show-navbar-button {
@@ -69,15 +72,16 @@
     margin: 0 auto;
     padding: 0;
     transition: all 0.3s ease-in-out;
-    
+
 }
 
 .show-navbar-button.bounce {
     animation: bounceSometimes 0.5s ease-in-out;
 }
 
-.show-navbar-button, .home-navbar {
-    box-shadow: 0 10px 5px  rgba(0, 0, 0, 0.38);
+.show-navbar-button,
+.home-navbar {
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.38);
 }
 
 
@@ -93,7 +97,7 @@
 }
 
 .show-navbar-button .icon:hover {
-    color:#055757;
+    color: #055757;
 }
 
 @media (max-width: 700px) {
@@ -115,19 +119,122 @@
     0% {
         transform: translateY(0);
     }
+
     25% {
         transform: translateY(-20px);
     }
+
     50% {
         transform: translateY(0);
-        
-    }
-    75% {
-        transform: translateY(-20px);
-    }    
-    100% {
-        transform: translateY(0);
-        
+
     }
 
+    75% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+
+    }
+
+}
+
+.hline {
+    border-bottom: 1px solid #dad6d6;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.card.project-accordion {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0.35rem;
+}
+
+.project-accordion__trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1rem 0.85rem;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+}
+
+.project-accordion__summary {
+    display: grid;
+    gap: 0.35rem;
+    flex: 1;
+}
+
+.project-accordion__summary h3 {
+    margin: 0;
+}
+
+.project-accordion__subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+}
+
+.project-accordion__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+}
+
+.project-accordion__icon {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    transition: transform 0.25s ease;
+}
+
+.project-accordion__icon.is-open {
+    transform: rotate(180deg);
+}
+
+.project-accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 1rem;
+}
+
+.project-accordion__content.is-open {
+    max-height: 1200px;
+    padding: 0 1rem 1rem;
+}
+
+.project-accordion__description {
+    margin: 0;
+}
+
+.project-accordion__section {
+    margin-top: 1rem;
+}
+
+.project-accordion__section h4 {
+    margin-bottom: 0.35rem;
+}
+
+.project-accordion__links {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.project-accordion__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.project-accordion__talks p {
+    margin: 0;
 }
