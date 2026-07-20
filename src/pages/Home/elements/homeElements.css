@@ -216,6 +216,10 @@
     margin: 0;
 }
 
+.project-accordion__description.desc-link {
+    background-color: white;
+
+}
 .project-accordion__section {
     margin-top: 1rem;
 }
@@ -243,6 +247,10 @@
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
+    padding: 2px 5px;
+    border-radius: 10px;
+    
+    background-color: rgba(135, 206, 253, 0.363);
 }
 .home-card.project-card .project-accordion__related-link {
     display: inline;

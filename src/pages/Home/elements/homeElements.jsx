@@ -13,6 +13,42 @@ import saviialib from '../../../../public/saviialib.png';
 import ProjectsCard from "./HomeProjects";
 import { PROJECTS } from './constants'
 
+const renderDescriptionWithLinks = (description, descriptionLinks = {}) => {
+    const linkEntries = Object.entries(descriptionLinks);
+
+    if (!linkEntries.length) {
+        return description;
+    }
+
+    return linkEntries.reduce((nodes, [label, href]) => {
+        return nodes.flatMap((node) => {
+            if (typeof node !== 'string') {
+                return [node];
+            }
+
+            const segments = node.split(label);
+
+            if (segments.length === 1) {
+                return [node];
+            }
+
+            return segments.flatMap((segment, index) => {
+                const parts = [segment];
+
+                if (index < segments.length - 1) {
+                    parts.push(
+                        <a className={'desc-link'} key={`${label}-${index}`} href={href} target="_blank" rel="noopener noreferrer">
+                            {label}
+                        </a>
+                    );
+                }
+
+                return parts;
+            });
+        });
+    }, [description]);
+};
+
 const ProjectAccordion = ({ project }) => {
     const [open, setOpen] = useState(false);
 
@@ -36,28 +72,25 @@ const ProjectAccordion = ({ project }) => {
             </button>
 
             <div className={`project-accordion__content ${open ? 'is-open' : ''}`}>
-                {project.description.map((desc) => (
-                    <>
-                        <p className="project-accordion__description">{desc}</p> <br />
-                    </>
+                {project.description.map((desc, index) => (
+                    <p key={`${project.title}-description-${index}`} className="project-accordion__description">
+                        {renderDescriptionWithLinks(desc, project.description_links)}
+                    </p>
                 ))}
                 {project.code?.length ? (
                     <div className="project-accordion__section">
                         <h4>Code</h4>
                         <div className="project-accordion__links">
                             {project.code.map((link) => (
-                                <>
-                                    <br />
-                                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-                                        <FaGithub style={{ verticalAlign: 'middle' }} />
-                                        {link.label}
-                                    </a><br /></>
+                                <><a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                                    <FaGithub style={{ verticalAlign: 'middle' }} />
+                                    {link.label}
+                                </a> <br /><br /></>
 
                             ))}
                         </div>
                     </div>
                 ) : null}
-
                 {project.related?.length ? (
                     <div className="project-accordion__section">
                         <h4>Related</h4>
@@ -296,7 +329,7 @@ export const InformationCard = ({ isDarkMode }) => {
             <p> My research interests lie in interdisciplinary projects that connect theoretical foundations with practical, real-world solutions. I am particularly interested in the design and development of <span style={{fontWeight: '500', color: 'gray'}}>IoT and edge computing architectures</span>, <span style={{fontWeight: '500', color: 'gray'}}>ETL and data pipelines</span>, and <span style={{fontWeight: '500', color: 'gray'}}>reliable data-intensive systems</span>. I am also interested in machine learning and MLOps, particularly when integrated into reproducible data workflows and distributed computing infrastructures. </p>
 
             <h2>Projects</h2>
-            <p>I first joined these projects as an Undergraduate Research Assistant and have continued contributing to them in my current role as a Research Assistant. My work focuses on designing and developing technical infrastructure for scientific research, particularly in remote environments where data availability, connectivity, reproducibility, and system reliability are key challenges.</p>
+            <p>I first joined these projects as an Undergraduate Research Assistant and have continued contributing to them in my current role as a Research Assistant. My work focuses on designing and developing technical infrastructure for scientific research, particularly in remote environments where data availability, connectivity, and system reliability are key challenges.</p>
             {PROJECTS.map((project) => (
                 <ProjectAccordion key={project.title} project={project} />
             ))}

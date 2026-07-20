@@ -75,12 +75,12 @@ body,
 
 .home-card.project-card a {
   font-weight: 200;
-  padding: 4px 10px;
+  /* padding: 4px 10px; */
   border-radius: 2px;
-  font-size: 0.80rem;
-  color: rgb(139, 138, 138);
+  font-size: 0.90rem;
+  color: #6b8eed;
   width: max-content;
-  background-color: #eff2fc;
+  /* background-color: #eff2fc; */
 }
 .home-card.project-card a:hover {
   color: #6b8eed;
