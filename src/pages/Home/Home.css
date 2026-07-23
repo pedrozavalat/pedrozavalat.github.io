@@ -73,6 +73,10 @@ body,
   overflow: visible;
 }
 
+.home-card.project-card:last-child {
+  margin-bottom: 5rem;
+}
+
 .home-card.project-card a {
   font-weight: 200;
   /* padding: 4px 10px; */
