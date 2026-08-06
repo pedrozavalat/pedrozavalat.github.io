@@ -7,7 +7,7 @@ import './HomeElements.css';
 import Card from "../../../components/Card/Card";
 import { Column, Row } from "../../../components/Table/Table";
 import Line from "../../../components/Line/Line";
-import MePhoto from "../../../../public/me1.png";
+import MePhoto from "../../../../public/me2.jpg";
 import saviia from '../../../../public/saviia.png';
 import saviialib from '../../../../public/saviialib.png';
 import ProjectsCard from "./HomeProjects";
@@ -306,11 +306,21 @@ export const ProfileCard = ({ isDarkMode }) => {
                 <p>
                     <IoIosDocument style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
                     <a
-                        href="docs/OFICIAL_CV.pdf"
+                        href="docs/CV_Pedro_Pablo_Zavala_ES.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Download Resume (CV)
+                        Resume (Spanish)
+                    </a>
+                </p>
+                <p>
+                    <IoIosDocument style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
+                    <a
+                        href="docs/CV_Pedro_Pablo_Zavala_EN.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume (English)
                     </a>
                 </p>
             </div>
