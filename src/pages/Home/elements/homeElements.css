@@ -1,3 +1,4 @@
+
 .home-navbar {
     justify-content: center;
     gap: 1rem;
@@ -97,7 +98,7 @@
 }
 
 .show-navbar-button .icon:hover {
-    color: #055757;
+    color: var(--primary-color);
 }
 
 @media (max-width: 700px) {
@@ -230,12 +231,12 @@
 
 .project-accordion__section ul li {
     margin-bottom: 0;
-    color: rgba(71, 125, 252, 0.75);
+    color: var(--primary-color);
 }
 
 .project-accordion__links {
-    padding-left: 1.25rem;
-    
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .project-accordion__links li {
@@ -250,7 +251,7 @@
     padding: 2px 5px;
     border-radius: 10px;
     
-    background-color: rgba(135, 206, 253, 0.363);
+    background-color: var(--terciary-color);
 }
 .home-card.project-card .project-accordion__related-link {
     display: inline;
@@ -275,6 +276,38 @@
 .project-accordion__talks p {
     margin: 0;
 }
+
+.information-card-navbar {
+    gap: 1rem;
+    background-color: white;
+    z-index: 1000;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.information-card-navbar ul {
+    justify-content: left;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+.information-card-navbar ul li a {
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--quinary-color);
+    font-weight: bolder;
+}
+.information-card-navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+
 
 @media (max-width: 900px) {
     .hline {
@@ -327,3 +360,4 @@
         height: 0.9rem;
     }
 }
+

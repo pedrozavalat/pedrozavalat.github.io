@@ -76,3 +76,77 @@ export const PROJECTS = [
         ],
     },
 ];
+
+
+export const EDUCATION_EXPERIENCE = [
+    {
+        title: "Computer Science Degree",
+        subtitle: "Pontificia Universidad Católica de Chile",
+        date: "2021 - 2026",
+    }
+]
+
+export let WORK_EXPERIENCE = [
+    {
+        "title": "Big Data Engineer Intern",
+        "subtitle": "SimplePark",
+        "date": "Jan. 2025 - Apr. 2025",
+        "details": [
+            "Worked as a Data Engineer Intern, designing and implementing data pipelines for processing and analyzing large-scale parking data.",
+            "Utilized Google Cloud technologies to build and maintain the data infrastructure."
+        ]
+    },
+    {
+        "title": "Software Engineering Project",
+        "subtitle": "School of Health Sciences UC - School of Engineering UC",
+        "date": "Aug. 2024 - Dec. 2024",
+        "details": [
+            "Worked as a backend developer to design an AI-powered web application, contributing in the database schema design and the integration of external sources (OpenAlex).",
+        ]
+    },
+    {
+        "title": "Graduation Capstone Project",
+        "subtitle": "National Center for Artificial Intelligence (CENIA) - School of Engineering UC",
+        "date": "Mar. 2026 - Jun. 2026",
+        "details": [
+            "Collaborated on the development of a text-to-SQL agent using LLMs, RAG architecture and vector databases."
+        ]
+    },
+    {
+        "title": "Undergraduate Research Assistant",
+        "subtitle": "Estación Patagonia UC (EPII UC) - School of Engineering UC",
+        "date": "Mar. 2025 - Jul. 2025",
+        "details": [
+            "Developed ECHO, an edge-to-cloud platform for real-time environmental monitoring and data management.",
+        ]
+    },
+    {
+        "title": "Research Assistant",
+        "subtitle": "Estación Patagonia UC (EPII UC) - School of Engineering UC",
+        "date": "Aug. 2025 - Present",
+        "details": [
+            "Collaborating on the data architecture and backend development of PISMA-WP, a socio-environmental monitoring platform for Western Patagonia.",
+            "Maintaining and improving ECHO with new features and optimizatios for data acquisition and monitoring",
+            "Collaborating on the development of a wildlife monitoring system, applying computer vision, human-in-the-loop, and edge inference techniques to detect and classify wild species in remote environments.",
+        ]
+    },
+    {
+        "title": "Undergraduate Researcher - SCORPIO",
+        "subtitle": "IoT-UC Laboratory - School of Engineering UC",
+        "date": "Mar. 2026 - Jun. 2026",
+        "details": [
+            "Designed and implemented an edge-to-cloud architecture for acquiring and processing LoRa satellite data.",
+            "Integrated MQTT, SQLite, containerized edge services, REST APIs, and geospatial visualization.",
+            "Designed for experimental traceability and operation under intermittent connectivity."
+        ]
+    }
+];
+
+WORK_EXPERIENCE = WORK_EXPERIENCE.sort((a, b) => {
+    const dateA = new Date(a.date.split(' - ')[0]);
+    const dateB = new Date(b.date.split(' - ')[0]);
+    // If has "Present" in the date, consider it as the most recent
+    if (a.date.includes("Present")) return -1;
+    if (b.date.includes("Present")) return 1;
+    return dateB - dateA;
+});
