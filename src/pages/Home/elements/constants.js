@@ -159,7 +159,7 @@ export let WORK_EXPERIENCE = [
         ]
     },
     {
-        "title": "Undergraduate Research Assistant",
+        "title": "Undergraduate Research Assistant - ECHO",
         "subtitle": "Estación Patagonia UC (EPII UC) - School of Engineering UC",
         "date": "Mar. 2025 - Jul. 2025",
         "details": [
