@@ -32,6 +32,10 @@ export const PROJECTS = [
                     "Miranda, F. (2025, July 23). Ciencia de datos desde la Patagonia: investigación de pregrado mejora la gestión de datos científicos en la Estación UC. Estacion Patagonia.",
                 href: "https://estacionpatagonia.uc.cl/ipre/ciencia-de-datos-desde-la-patagonia-investigacion-de-pregrado-mejora-gestion-de-datos-cientificos-en-la-estacion-uc/",
             },
+            {
+                label: "Saffie, N. (2025, Dec 29). Estación Patagonia UC: Diez años haciendo ciencia en los confines de Chile",
+                href: "https://www.uc.cl/noticias/estacion-patagonia-uc-diez-anos-haciendo-ciencia-en-los-confines-de-chile/",
+            }
         ],
         talks: [
             {
@@ -47,6 +51,16 @@ export const PROJECTS = [
         role: "Research Assistant / ETL and Backend Engineer",
         description:
             ["I contribute to the development of a socio-environmental monitoring platform for Western Patagonia. My work focuses on designing reproducible ETL pipelines and backend services for integrating satellite, geospatial, environmental, and locally collected data. I also support the development of APIs and data architectures that incorporate metadata, traceability, versioning, and quality-control mechanisms for the analysis and visualization of socio-environmental indicators."],
+        code: [
+            {
+                label: "Pisma WP Web Platform",
+                href: "https://pismawp.raxlab.science/",
+                description: "Web platform for the visualization of socio-environmental indicators in Western Patagonia. The code is written in React.",
+                image: "/pisma/landing.png",
+                image_ref: "" // TODO: add image reference.
+            },
+        ]
+
     },
     {
         title: "ECHO ML edge: Machine Learning at the Edge",
@@ -57,8 +71,8 @@ export const PROJECTS = [
     },
     {
         title: "SCORPIO: Satellite Communication and Radio Propagation for the Internet of Things",
-        date: "March - June 2026",
-        role: "Undergraduate Researcher",
+        date: "March - Present",
+        role: "Research Assistant",
         description:
             ["I designed and implemented an edge-to-cloud architecture to acquire, process, store, transmit and visualise satellite LoRa data for the IoT-UC Laboratory. The system uses containerised edge services, MQTT-based communication, local SQLite storage, a REST API and a web-based geospatial interface. The system is designed to preserve experimental traceability and continue operating under intermittent connectivity, providing a foundation for distributed satellite signal measurement stations."]
         ,
@@ -70,9 +84,28 @@ export const PROJECTS = [
         ],
         code: [
             {
-                label: "Scorpio IoT UC",
+                label: "Scorpio Project",
                 href: "https://github.com/ScorpioIoTUC",
+                description: "Data extraction architecture implementation. This code uses basically MQTT to orchestrate different services with Docker. The entire code is written in Python. "
             },
+            {
+                label: "Scorpio CLI",
+                href: "https://github.com/ScorpioIoTUC/scorpio-cli",
+                description: "Command line interface for interacting with the Scorpio local system."
+            },
+            {
+                label: "Scorpio Website",
+                href: 'https://github.com/ScorpioIoTUC/scorpio-frontend',
+                description: "Web platform for the visualization of the data collected by the Scorpio system. The code is written in React.",
+                image: "/scorpio/landing.png",
+                image_ref: "" // TODO: add image reference.
+            },
+            {
+                label: "Scorpio API",
+                href: "https://github.com/ScorpioIoTUC/scorpio-backend",
+                description: "Backend API for the Scorpio website. The code is written in TypeScript, and it uses PostgreSQL for data storage.",
+                
+            }
         ],
     },
 ];

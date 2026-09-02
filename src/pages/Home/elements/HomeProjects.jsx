@@ -74,13 +74,30 @@ const ProjectAccordion = ({ project }) => {
                 {project.code?.length ? (
                     <div className="project-accordion__section">
                         <h4>Code</h4>
-                        <div className="project-accordion__links">
+                        <div className="project-code-grid">
                             {project.code.map((link) => (
-                                <><a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub style={{ verticalAlign: 'middle' }} />
-                                    {link.label}
-                                </a> <br /><br /></>
+                                <a
+                                    className="project-code-card"
+                                    key={link.href}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <span className="project-code-card__title">
+                                        <FaGithub />
+                                        {link.label}
+                                    </span>
 
+                                    {link.image ? (
+                                        <span className="project-code-card__image-wrap">
+                                            <img className="project-code-card__image" src={link.image} alt={link.label} />
+                                        </span>
+                                    ) : null}
+
+                                    {link.description ? (
+                                        <p className="project-code-card__description">{link.description}</p>
+                                    ) : null}
+                                </a>
                             ))}
                         </div>
                     </div>
