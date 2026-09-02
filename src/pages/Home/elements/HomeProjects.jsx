@@ -4,6 +4,9 @@ import Card from "../../../components/Card/Card";
 import { Column, Row } from "../../../components/Table/Table";
 import Line from "../../../components/Line/Line";
 import { FaChevronDown, FaGithub } from 'react-icons/fa';
+import { IoGlobeSharp } from "react-icons/io5";
+
+
 import { PROJECTS } from './constants';
 
 
@@ -84,8 +87,14 @@ const ProjectAccordion = ({ project }) => {
                                     rel="noopener noreferrer"
                                 >
                                     <span className="project-code-card__title">
-                                        <FaGithub />
+                                        {link.type === 'git'
+                                            ? <FaGithub />
+                                            : null}
+                                        {link.type === 'web'
+                                            ? <IoGlobeSharp />
+                                            : null}
                                         {link.label}
+
                                     </span>
 
                                     {link.image ? (

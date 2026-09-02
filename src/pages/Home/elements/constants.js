@@ -16,10 +16,16 @@ export const PROJECTS = [
             {
                 label: "raxlab/echo",
                 href: "https://github.com/raxlab/echo",
+                description: "Home Assistant integration for monitoring, automating, and orchestrating scientific data-acquisition workflows at remote field stations.",
+                image: "https://opengraph.githubassets.com/1/raxlab/echo",
+                type: 'git',
             },
             {
                 label: "echo-lib / saviialib",
                 href: "https://github.com/pedrozavalat/echo-lib/tree/main/src/saviialib",
+                description: "Python library for extracting, validating, processing, and synchronizing data from heterogeneous field and cloud sources.",
+                image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-lib",
+                type: 'git',
             },
         ],
         related: [
@@ -48,7 +54,7 @@ export const PROJECTS = [
     {
         title: "PISMA-WP: Platform for Intelligent Socio-Environmental Monitoring and Analysis",
         date: "March 2026 - Present",
-        role: "Research Assistant / ETL and Backend Engineer",
+        role: "Research Assistant",
         description:
             ["I contribute to the development of a socio-environmental monitoring platform for Western Patagonia. My work focuses on designing reproducible ETL pipelines and backend services for integrating satellite, geospatial, environmental, and locally collected data. I also support the development of APIs and data architectures that incorporate metadata, traceability, versioning, and quality-control mechanisms for the analysis and visualization of socio-environmental indicators."],
         code: [
@@ -57,7 +63,8 @@ export const PROJECTS = [
                 href: "https://pismawp.raxlab.science/",
                 description: "Web platform for the visualization of socio-environmental indicators in Western Patagonia. The code is written in React.",
                 image: "/pisma/landing.png",
-                image_ref: "" // TODO: add image reference.
+                image_ref: "", // TODO: add image reference.
+                type: 'web',
             },
         ]
 
@@ -86,26 +93,32 @@ export const PROJECTS = [
             {
                 label: "Scorpio Project",
                 href: "https://github.com/ScorpioIoTUC",
-                description: "Data extraction architecture implementation. This code uses basically MQTT to orchestrate different services with Docker. The entire code is written in Python. "
+                description: "Data extraction architecture implementation. This code uses basically MQTT to orchestrate different services with Docker. The entire code is written in Python.",
+                image: "/scorpio/landing.png",
+                type: 'git'
             },
             {
                 label: "Scorpio CLI",
                 href: "https://github.com/ScorpioIoTUC/scorpio-cli",
-                description: "Command line interface for interacting with the Scorpio local system."
+                description: "Command line interface for interacting with the Scorpio local system.",
+                image: "https://opengraph.githubassets.com/1/ScorpioIoTUC/scorpio-cli",
+                type: 'git'
             },
-            {
-                label: "Scorpio Website",
-                href: 'https://github.com/ScorpioIoTUC/scorpio-frontend',
-                description: "Web platform for the visualization of the data collected by the Scorpio system. The code is written in React.",
-                image: "/scorpio/landing.png",
-                image_ref: "" // TODO: add image reference.
-            },
-            {
-                label: "Scorpio API",
-                href: "https://github.com/ScorpioIoTUC/scorpio-backend",
-                description: "Backend API for the Scorpio website. The code is written in TypeScript, and it uses PostgreSQL for data storage.",
-                
-            }
+            // {
+            //     label: "Scorpio Website",
+            //     href: 'https://github.com/ScorpioIoTUC/scorpio-frontend',
+            //     description: "Web platform for the visualization of the data collected by the Scorpio system. The code is written in React.",
+            //     image: "/scorpio/landing.png",
+            //     image_ref: "", // TODO: add image reference.
+            //     type: 'git',
+            // },
+            // {
+            //     label: "Scorpio API",
+            //     href: "https://github.com/ScorpioIoTUC/scorpio-backend",
+            //     description: "Backend API for the Scorpio website. The code is written in TypeScript, and it uses PostgreSQL for data storage.",
+            //     image: "https://opengraph.githubassets.com/1/ScorpioIoTUC/scorpio-backend",
+            //     type: 'git'
+            // }
         ],
     },
 ];
@@ -171,6 +184,14 @@ export let WORK_EXPERIENCE = [
             "Designed and implemented an edge-to-cloud architecture for acquiring and processing LoRa satellite data.",
             "Integrated MQTT, SQLite, containerized edge services, REST APIs, and geospatial visualization.",
             "Designed for experimental traceability and operation under intermittent connectivity."
+        ]
+    },
+    {
+        "title": "Research Assistant",
+        "subtitle": "IoT-UC Laboratory",
+        "date": "Aug. 2026 - Present",
+        "details": [
+            "Providing support forthe deployment and implementation of the SCORPIO system."
         ]
     }
 ];
