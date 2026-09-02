@@ -6,7 +6,7 @@ export const PROJECTS = [
         description:
             [
                 "SAVIIA (Sistema de Administración y Visualización de Información para la Investigación y Análisis) and ECHO (Edge Computing and Hardware Orchestration) form a hybrid data infrastructure for UC's Regional Field Stations Network (RCER). ECHO operates at the station level, coordinating local data acquisition, monitoring, and automation, while SAVIIA provides the centralized environment for storing, governing, integrating, and analyzing scientific and operational data. This edge-to-cloud architecture is designed to improve data traceability, reproducibility, and secure collaboration across research teams.",
-                "I joined the initiative as an Undergraduate Research Assistant and currently continue as a Research Assistant. At the pilot site, Estación Patagonia UC (EPII UC), I developed ECHO, a Home Assistant integration for orchestrating data acquisition workflows, monitoring sensors, executing automations, and interacting with local IoT devices, and EchoLib, a Python library that implements the connection and data-processing logic for heterogeneous sources such as FTP/SFTP servers, REST APIs, sensors, and cloud storage services. Together, both components support the automated extraction, validation, backup, synchronization, and monitoring of data in an environment with limited connectivity, restricted energy availability, and minimal on-site maintenance."
+                "I joined the initiative as an Undergraduate Research Assistant and currently continue as a Research Assistant. At the pilot site, Estación Patagonia UC (EPII UC), I developed ECHO –a Home Assistant integration for orchestrating data acquisition workflows, monitoring sensors, executing automations, and interacting with local IoT devices– and EchoLib –a Python library that implements the connection and data-processing logic for heterogeneous sources such as REST APIs, sensors, and cloud storage services. Together, both components support the automated extraction, synchronisation and monitoring of data in an environment with restricted energy availability and minimal on-site maintenance."
             ],
         description_links: {
             "UC's Regional Field Stations Network (RCER)": "https://www.uc.cl/unidades-academicas/red-de-centros-y-estaciones-regionales-rcer-uc/",
@@ -56,7 +56,7 @@ export const PROJECTS = [
         date: "March 2026 - Present",
         role: "Research Assistant",
         description:
-            ["I contribute to the development of a socio-environmental monitoring platform for Western Patagonia. My work focuses on designing reproducible ETL pipelines and backend services for integrating satellite, geospatial, environmental, and locally collected data. I also support the development of APIs and data architectures that incorporate metadata, traceability, versioning, and quality-control mechanisms for the analysis and visualization of socio-environmental indicators."],
+            ["I contribute as a software engineer to the development of a socio-environmental monitoring platform for Western Patagonia; Pisma. My work involves designing reproducible ETL pipelines and backend services to integrate satellite, geospatial, and locally collected data from the EPII UC station. I also support in the decision-making process and collaborate with colleagues from the Geography Institute to define different mechanisms for developing socio-environmental indicators in Western Patagonia."],
         code: [
             {
                 label: "Pisma WP Web Platform",
@@ -74,7 +74,16 @@ export const PROJECTS = [
         date: "March 2026 - Present",
         role: "Research Assistant",
         description:
-            ["I am working on the development and evaluation of machine-learning models using camera-trap datasets collected at Estación Patagonia UC. My work includes dataset preparation, animal detection, species classification, transfer learning, model evaluation, and experimentation with different computer-vision architectures. The broader objective is to develop an MLOps and edge-inference infrastructure that connects cloud-based model training with local inference in remote scientific stations."],
+            ["I am working on the development and evaluation of machine-learning models using camera-trap datasets collected at Estación Patagonia UC. My work involves experimenting with different computer vision architectures, preprocessing evaluation datasets, and designing MLOps pipelines. The project's overarching goal is to develop an MLOps and edge-inference infrastructure using the ECHO framework, deploying a species detector and classifier for local inference at remote scientific stations."],
+        code: [
+            {
+                label: "ECHO ML Edge",
+                href: "https://github.com/pedrozavalat/echo-ml-edge",
+                description: "Github repository.",
+                image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-ml-edge",
+                type: 'git',
+            },
+        ]
     },
     {
         title: "SCORPIO: Satellite Communication and Radio Propagation for the Internet of Things",
