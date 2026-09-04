@@ -54,7 +54,7 @@ export const PROJECTS = [
     {
         title: "PISMA-WP: Platform for Intelligent Socio-Environmental Monitoring and Analysis",
         date: "March 2026 - Present",
-        role: "Research Assistant",
+        role: "Undergraduate Research Assistant / Research Assistant",
         description:
             ["I contribute as a software engineer to the development of a socio-environmental monitoring platform for Western Patagonia; Pisma. My work involves designing reproducible ETL pipelines and backend services to integrate satellite, geospatial, and locally collected data from the EPII UC station. I also support in the decision-making process and collaborate with colleagues from the Geography Institute to define different mechanisms for developing socio-environmental indicators in Western Patagonia."],
         code: [
@@ -87,8 +87,8 @@ export const PROJECTS = [
     },
     {
         title: "SCORPIO: Satellite Communication and Radio Propagation for the Internet of Things",
-        date: "March - Present",
-        role: "Research Assistant",
+        date: "March 2026 - Present",
+        role: "Undergraduate Research Assistant / Research Assistant",
         description:
             ["I designed and implemented an edge-to-cloud architecture to acquire, process, store, transmit and visualise satellite LoRa data for the IoT-UC Laboratory. The system uses containerised edge services, MQTT-based communication, local SQLite storage, a REST API and a web-based geospatial interface. The system is designed to preserve experimental traceability and continue operating under intermittent connectivity, providing a foundation for distributed satellite signal measurement stations."]
         ,
@@ -101,9 +101,9 @@ export const PROJECTS = [
         code: [
             {
                 label: "Scorpio Project",
-                href: "https://github.com/ScorpioIoTUC",
+                href: "https://github.com/ScorpioIoTUC/Scorpio-Project",
                 description: "Data extraction architecture implementation. This code uses basically MQTT to orchestrate different services with Docker. The entire code is written in Python.",
-                image: "/scorpio/landing.png",
+                image: "https://opengraph.githubassets.com/1/ScorpioIoTUC/Scorpio-Project",
                 type: 'git'
             },
             {

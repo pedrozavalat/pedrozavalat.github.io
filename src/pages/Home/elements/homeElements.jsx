@@ -1,7 +1,7 @@
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { IoIosDocument } from "react-icons/io";
-import { FaLinkedin, FaGithub, FaChevronDown } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaMoon, FaSun } from "react-icons/fa";
 import { MdMail } from 'react-icons/md';
 import './HomeElements.css';
 import Card from "../../../components/Card/Card";
@@ -12,9 +12,16 @@ import saviia from '../../../../public/saviia.png';
 import saviialib from '../../../../public/saviialib.png';
 import Projects from "./HomeProjects";
 import { InformationCard } from "./homeInformation";
+import { useDarkMode } from "../HomeContext";
 
 
 export const ProfileCard = ({ }) => {
+    const { darkMode, toggleDarkMode } = useDarkMode();
+    const [ghColor, setGhColor] = useState("gray");
+    useEffect(() => {
+        setGhColor(!darkMode ? "gray" : "var(--primary-color)");
+    }, [darkMode]);
+    
 
     return (
         <Card styles={[`home-card profile-card`]} style={{ width: '100%', maxWidth: '400px', textAlign: 'left' }}>
@@ -22,11 +29,11 @@ export const ProfileCard = ({ }) => {
             <h3>Pedro Pablo Zavala Tejos</h3>
             <div>
                 <p>
-                    <MdMail style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
+                    <MdMail style={{ verticalAlign: 'middle', marginRight: 8, color: ghColor }} />
                     <a href="">pedropablozavalat [at] uc [dot] cl</a>
                 </p>
                 <p>
-                    <FaLinkedin style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
+                    <FaLinkedin style={{ verticalAlign: 'middle', marginRight: 8, color: ghColor }} />
                     <a
                         href="https://www.linkedin.com/in/pedro-pablo-zavala-tejos-671203244/"
                         target="_blank"
@@ -37,7 +44,7 @@ export const ProfileCard = ({ }) => {
                     </a>
                 </p>
                 <p>
-                    <FaGithub style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
+                    <FaGithub style={{ verticalAlign: 'middle', marginRight: 8, color: ghColor }} />
                     <a
                         href="https://github.com/pedrozavalat"
                         target="_blank"
@@ -48,7 +55,7 @@ export const ProfileCard = ({ }) => {
                 </p>
 
                 <p>
-                    <IoIosDocument style={{ verticalAlign: 'middle', marginRight: 8, color: "gray" }} />
+                    <IoIosDocument style={{ verticalAlign: 'middle', marginRight: 8, color: ghColor }} />
                     <span style={{ width: '5px', display: 'inline-block' }}></span>
                     <a
                         href="docs/CV_Pedro_Pablo_Zavala_EN.pdf"
@@ -72,11 +79,26 @@ export const ProfileCard = ({ }) => {
     )
 }
 
+const DarkModeToggle = ({ }) => {
+    const { darkMode, toggleDarkMode } = useDarkMode();
+    if (!darkMode) return (
+        <button className="dark-mode-toggle dark" onClick={toggleDarkMode}>
+            <FaSun size={20}/>
+        </button>
+    ) 
+    return (
+        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+            <FaMoon size={20}/>
+        </button>
+    )
+}
+
+
 
 export const HomeOverview = ({ }) => {
-
     return (
         <div className="home">
+            <DarkModeToggle />
             <ProfileCard />
             <InformationCard />
         </div>

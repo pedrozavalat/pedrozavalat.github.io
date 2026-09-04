@@ -153,6 +153,10 @@
     border-radius: 0.35rem;
 }
 
+.dark-mode .card.project-accordion {
+    border: 1px solid var(--dark-mode-border-color);
+}
+
 .project-accordion__trigger {
     width: 100%;
     display: flex;
@@ -230,6 +234,12 @@
     font-weight: bolder;
 }
 
+.dark-mode .project-accordion__section h4, a {
+    color: var(--primary-color);
+}
+
+
+
 .project-code-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -261,6 +271,11 @@
     transform: translateY(-1px);
     border-color: var(--primary-color);
     box-shadow: 0 8px 20px rgba(35, 35, 35, 0.08);
+}
+
+.dark-mode .home-card.project-card a.project-code-card {
+    background: var(--dark-mode-bg-color);
+    border-color: var(--dark-mode-border-color);
 }
 
 .project-code-card__title {
@@ -325,6 +340,14 @@
     text-decoration: none;
 }
 
+.dark-mode .home-card.project-card .project-accordion__related-link {
+    color: var(--dark-mode-text-color);
+}
+.dark-mode .home-card.project-card .project-accordion__related-link:hover {
+    color: var(--primary-color);
+}
+
+
 .home-card.project-card .project-accordion__related-link:hover,
 .home-card.project-card .project-accordion__related-link:focus-visible {
     text-decoration: underline;
@@ -332,6 +355,7 @@
 .project-accordion__talks p {
     margin: 0;
 }
+
 
 .information-card-navbar {
     gap: 1rem;
@@ -424,4 +448,34 @@
     .home-card.project-card a.project-code-card {
         padding: 0.75rem;
     }
+}
+
+.library-item {
+    margin-bottom: 1.5rem;
+    border: 1px solid #d9d9d9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+.library-item__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.library-item__header h3 {
+    margin: 0;
+}
+.library-item__header a {
+    color: var(--primary-color);
+}
+
+.dark-mode .library-item {
+    color: var(--dark-mode-text-color);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+.dark-mode .library-item__header h3, .dark-mode .library-item__header aside {
+    color: var(--primary-color);
 }

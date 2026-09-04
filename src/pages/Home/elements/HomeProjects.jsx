@@ -49,6 +49,21 @@ const renderDescriptionWithLinks = (description, descriptionLinks = {}) => {
 
 const ProjectAccordion = ({ project }) => {
     const [open, setOpen] = useState(false);
+
+    const getCodeTitle = (links) => {
+        const types = links.map(link => link.type);
+        let title = '';
+        if (types.includes('git') && !types.includes('web')) {
+            title = 'Code repositories';
+        } else if (!types.includes('git') && types.includes('web')) {
+            title = 'Web applications';
+        } else if (types.includes('git') && types.includes('web')) {
+            title = 'Code repositories and web applications';
+        }
+        return title;
+
+    }
+
     return (
         <Card styles={["home-card project-card project-accordion"]}>
             <button
@@ -76,7 +91,7 @@ const ProjectAccordion = ({ project }) => {
                 ))}
                 {project.code?.length ? (
                     <div className="project-accordion__section">
-                        <h4>Code</h4>
+                        <h4>{getCodeTitle(project.code)}</h4>
                         <div className="project-code-grid">
                             {project.code.map((link) => (
                                 <a
