@@ -5,7 +5,7 @@ import Line from "../../../components/Line/Line";
 import { FaChevronDown, FaGithub } from 'react-icons/fa';
 import { SiPypi, SiPython, SiHomeassistantcommunitystore } from "react-icons/si";
 import Projects from "./HomeProjects";
-import { EDUCATION_EXPERIENCE, WORK_EXPERIENCE } from "./constants";
+import { EDUCATION_EXPERIENCE, WORK_EXPERIENCE, LIBRARIES } from "./constants";
 
 import { useDarkMode } from "../HomeContext";
 
@@ -96,32 +96,19 @@ export const InformationLibrariesCard = ({ }) => {
         <section id="libraries">
             <h2>Python Packages and HA Integrations</h2>
             <p>Here are some libraries and Home Assistant Integrations that I've been developing over the past few years:</p>
-            <div className="library-item">
-                <div className="library-item__header">
-                    <SiPython size={30} color={iconColor} />
-                    <a
-                        href="https://pypi.org/project/scorpio-cli/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >Scorpio CLI</a>
+            {LIBRARIES.map((library, index) => (
+                <div className="library-item" key={index}>
+                    <div className="library-item__header">
+                        <library.icon size={30} color={iconColor} />
+                        <a
+                            href={library.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >{library.label}</a>
+                    </div>
+                    <p>{library.description}</p>
                 </div>
-                <p>
-                    A Python package that provides a command-line interface for interacting with the Scorpio ground station.
-                </p>
-            </div>
-            <div className="library-item">
-                <div className="library-item__header">
-                    <SiHomeassistantcommunitystore size={30} color={iconColor} />
-                    <a
-                        href="https://github.com/raxlab/echo/tree/main"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >ECHO (Edge Computing and Hardware Orchestration)</a>
-                </div>
-                <p>
-                    A Home Assistant Integration designed for orchestrating scientific and operational information at stations in the RCER UC network.
-                </p>
-            </div>
+            ))}
         </section>
     )
 }

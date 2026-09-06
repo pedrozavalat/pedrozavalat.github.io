@@ -1,3 +1,4 @@
+import { SiPython, SiHomeassistantcommunitystore } from "react-icons/si";
 export const PROJECTS = [
     {
         title: "SAVIIA and ECHO: Trusted Data Infrastructures for Field Science",
@@ -213,3 +214,24 @@ WORK_EXPERIENCE = WORK_EXPERIENCE.sort((a, b) => {
     if (b.date.includes("Present")) return 1;
     return dateB - dateA;
 });
+
+export const LIBRARIES = [
+    {
+        label: "ECHO (Edge Computing and Hardware Orchestration)",
+        href: "https://github.com/raxlab/echo/tree/main",
+        description: "A Home Assistant Integration designed for orchestrating scientific and operational information at stations in the RCER UC network.",
+        icon: SiHomeassistantcommunitystore,
+    },
+    {
+        label: "Scorpio CLI",
+        href: "https://pypi.org/project/scorpio-cli/",
+        description: "A Python package that provides a command-line interface for interacting with the Scorpio ground station.",
+        icon: SiPython,
+    },
+    {
+        label: "SaviiaLib / EchoLib",
+        href: "https://pypi.org/project/saviialib/",
+        description: "A Python library that implements the connection and data processing logic for heterogeneous sources within the ECHO framework.",
+        icon: SiPython,
+    },
+]
