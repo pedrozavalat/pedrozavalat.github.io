@@ -28,23 +28,24 @@ export const InformationHomeCard = ({ }) => {
                 <h2>About me</h2>
                 <p>
                     I am a graduated Computer Science Engineer from <a href="https://www.ing.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile (PUC)</a>, with a Major in Computing and Information Systems and a Minor in Data Science and Analytics.
-                    I am also an active collaborator in research projects with <a href="https://estacionpatagonia.uc.cl/">EPII UC</a> and <a href="https://www.linkedin.com/company/iot-uc/">IoT-UC Lab</a>, where I have contributed to the development of environmental monitoring systems and embedded applications.
-                    My interests lie in interdisciplinary projects, particularly designing data-intensive systems and applied ML solutions for real-world problems.
+                    I am also an active collaborator in research projects with <a href="https://estacionpatagonia.uc.cl/">EPII UC</a> and <a href="https://www.linkedin.com/company/iot-uc/">IoT-UC Lab</a>, where I have contributed to the development of software solutions for environmental monitoring and scientific research.
 
                 </p>
             </section>
             <section id="research-interest">
                 <h2>Research interest</h2>
                 <ul>
-                    <li>Reliable data-intensive systems for environmental monitoring</li>
-                    <li>Applied machine learning for real-world problems</li>
-                    <li>IoT architectures and edge computing</li>
+                    <li>Distributed and Data-Intensive Systems</li>
+                    <li>Edge Computing and IoT Systems</li>
+                    
+                    <li>Applied ML for real-world problems</li>
                 </ul>
+                <p>My interests lie in interdisciplinary projects, particularly designing data-intensive systems and applied ML solutions for real-world problems.</p>
             </section>
 
             <section id="projects">
                 <h2>Projects</h2>
-                <p>I first joined these projects as an Undergraduate Research Assistant and have continued contributing to them in my current role as a Research Assistant. My work focuses on designing and developing technical infrastructure for scientific research, particularly in remote environments where data availability, connectivity, and system reliability are key challenges.</p>
+                <p>I've worked on different software systems that move, process and serve data across cloud and edge environemnts. </p>
                 <Projects />
             </section>
         </>

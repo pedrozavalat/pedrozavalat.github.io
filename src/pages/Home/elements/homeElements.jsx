@@ -27,6 +27,9 @@ export const ProfileCard = ({ }) => {
         <Card styles={[`home-card profile-card`]} style={{ width: '100%', maxWidth: '400px', textAlign: 'left' }}>
             <img src={MePhoto} width={120} height={225} alt="Profile" />
             <h3>Pedro Pablo Zavala Tejos</h3>
+            <p style={{color: ghColor}}>Software Engineer | Distributed, Data-Intensive & Edge Systems</p>
+            
+            {/* Communication list */}
             <div>
                 <p>
                     <MdMail style={{ verticalAlign: 'middle', marginRight: 8, color: ghColor }} />

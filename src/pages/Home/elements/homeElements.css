@@ -179,12 +179,17 @@
 
 .project-accordion__summary h3 {
     margin: 0;
+    
 }
 
-.project-accordion__subtitle {
+.project-accordion__summary h6 {
     margin: 0;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    /* padding between lines .5rem */
+    line-height: 1.0rem;
+    font-weight: 400;
+    color: darkgray;
+    
 }
 
 .project-accordion__meta {
@@ -194,6 +199,9 @@
     color: rgba(255, 255, 255, 0.65);
     font-size: 0.9rem;
 }
+/* .project-accordion__summary span:first-child {
+    margin-bottom: 1rem;
+} */
 
 .project-accordion__icon {
     flex-shrink: 0;
@@ -257,6 +265,7 @@
     min-width: 0;
     box-sizing: border-box;
     padding: 0.85rem;
+
     border-radius: 0.65rem;
     background: #fff;
     border: 1px solid #d9d9d9;

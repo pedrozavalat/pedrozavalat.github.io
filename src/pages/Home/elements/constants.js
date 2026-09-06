@@ -1,7 +1,8 @@
 import { SiPython, SiHomeassistantcommunitystore } from "react-icons/si";
 export const PROJECTS = [
     {
-        title: "SAVIIA and ECHO: Trusted Data Infrastructures for Field Science",
+        title: "ECHO & SAVIIA",
+        subtitle: "An edge-to-cloud data orchestration system for RCER UC centres",
         date: "March 2025 - Present",
         role: "Research Assistant",
         description:
@@ -31,8 +32,8 @@ export const PROJECTS = [
         ],
         related: [
             {
-                label: "RaxLab Science",
-                href: "https://www.raxlab.science/"
+                label: "Raxlab - SAVIIA and ECHO: Trusted Data Infrastructures for Field Science",
+                href: "https://www.raxlab.science/project/saviia2025/"
             },
             {
                 label:
@@ -53,7 +54,8 @@ export const PROJECTS = [
         ],
     },
     {
-        title: "PISMA-WP: Platform for Intelligent Socio-Environmental Monitoring and Analysis",
+        title: "PISMA-WP",
+        subtitle: "Cloud data platform for intelligent socio-environmental monitoring and analysis in Western Patagonia.",
         date: "March 2026 - Present",
         role: "Undergraduate Research Assistant / Research Assistant",
         description:
@@ -67,31 +69,25 @@ export const PROJECTS = [
                 image_ref: "", // TODO: add image reference.
                 type: 'web',
             },
-        ]
+        ],
+        related: [
+            {
+                label: "Raxlab - PISMA-WP: Platform for Intelligent Socio‑Environmental Monitoring and Analysis",
+                href: "https://www.raxlab.science/project/avanzauc2026/"
+            },
+        ],
 
     },
-    {
-        title: "ECHO ML edge: Machine Learning at the Edge",
-        date: "March 2026 - Present",
-        role: "Research Assistant",
-        description:
-            ["I am working on the development and evaluation of machine-learning models using camera-trap datasets collected at Estación Patagonia UC. My work involves experimenting with different computer vision architectures, preprocessing evaluation datasets, and designing MLOps pipelines. The project's overarching goal is to develop an MLOps and edge-inference infrastructure using the ECHO framework, deploying a species detector and classifier for local inference at remote scientific stations."],
-        code: [
-            {
-                label: "ECHO ML Edge",
-                href: "https://github.com/pedrozavalat/echo-ml-edge",
-                description: "Github repository.",
-                image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-ml-edge",
-                type: 'git',
-            },
-        ]
-    },
-    {
-        title: "SCORPIO: Satellite Communication and Radio Propagation for the Internet of Things",
+    { //N Satellite Communication and Radio Propagation for the Internet of Things
+        title: "SCORPIO",
+        subtitle: "An event-driven, edge-to-cloud architecture designed for real-time satellite LoRa data acquisition and processing.",
         date: "March 2026 - Present",
         role: "Undergraduate Research Assistant / Research Assistant",
         description:
-            ["I designed and implemented an edge-to-cloud architecture to acquire, process, store, transmit and visualise satellite LoRa data for the IoT-UC Laboratory. The system uses containerised edge services, MQTT-based communication, local SQLite storage, a REST API and a web-based geospatial interface. The system is designed to preserve experimental traceability and continue operating under intermittent connectivity, providing a foundation for distributed satellite signal measurement stations."]
+            [
+                "I designed and implemented SCORPIO (Satellite Communication and Radio Propagation for the Internet of Things), an edge-to-cloud system for acquiring, processing, and transmitting satellite LoRa data to a centralized platform for the IoT-UC Laboratory.",
+                "The system consists of two main components: (1) SCORPIO Project, an event-driven edge application that collects and preprocesses data at ground stations running on Raspberry Pi devices, and (2) SCORPIO Platform, a cloud-based system for storing, visualizing, and analyzing the data collected across ground stations.",
+                "The architecture combines containerized edge services, MQTT-based communication, local SQLite storage, REST APIs, and a web-based geospatial interface. It is designed to preserve data integrity and experimental traceability while remaining operational under intermittent connectivity, providing a scalable foundation for distributed satellite signal measurement stations."]
         ,
         related: [
             {
@@ -130,6 +126,23 @@ export const PROJECTS = [
             //     type: 'git'
             // }
         ],
+    },
+    {
+        title: "ECHO ML-edge",
+        subtitle: "Edge ML Pipeline for environmental monitoring in the ECHO framework.",
+        date: "March 2026 - Present",
+        role: "Research Assistant",
+        description:
+            ["I am working on the development and evaluation of machine-learning models using camera-trap datasets collected at Estación Patagonia UC. My work involves experimenting with different computer vision architectures, preprocessing evaluation datasets, and designing MLOps pipelines. The project's overarching goal is to develop an MLOps and edge-inference infrastructure using the ECHO framework, deploying a species detector and classifier for local inference at remote scientific stations."],
+        code: [
+            {
+                label: "ECHO ML Edge",
+                href: "https://github.com/pedrozavalat/echo-ml-edge",
+                description: "Github repository.",
+                image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-ml-edge",
+                type: 'git',
+            },
+        ]
     },
 ];
 

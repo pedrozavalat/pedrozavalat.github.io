@@ -1,11 +1,11 @@
 import './HomeElements.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from "../../../components/Card/Card";
 import { Column, Row } from "../../../components/Table/Table";
 import Line from "../../../components/Line/Line";
 import { FaChevronDown, FaGithub } from 'react-icons/fa';
 import { IoGlobeSharp } from "react-icons/io5";
-
+import { useDarkMode } from "../HomeContext";
 
 import { PROJECTS } from './constants';
 
@@ -49,6 +49,13 @@ const renderDescriptionWithLinks = (description, descriptionLinks = {}) => {
 
 const ProjectAccordion = ({ project }) => {
     const [open, setOpen] = useState(false);
+    const [darkColor, setDarkColor] = useState('gray');
+    const [revDarkColor, setRevDarkColor] = useState('var(--primary-color)');
+    const { darkMode } = useDarkMode();
+    useEffect(() => {
+        setDarkColor(!darkMode ? 'gray' : 'var(--primary-color)');
+        setRevDarkColor(!darkMode ? 'var(--primary-color)' : 'gray');
+    }, [darkMode]);
 
     const getCodeTitle = (links) => {
         const types = links.map(link => link.type);
@@ -73,11 +80,13 @@ const ProjectAccordion = ({ project }) => {
                 aria-expanded={open}
             >
                 <div className="project-accordion__summary">
-                    <h3>{project.title}</h3>
-                    {project.subtitle ? <p className="project-accordion__subtitle">{project.subtitle}</p> : null}
+                    <span style={{display: 'inline-flex', margin: 0, padding: 0, justifyContent: 'space-between'}}>
+                        <h3 style={{color: darkColor}}>{project.title}</h3>
+                        <span style={{ color: revDarkColor }}>{project.date}</span>
+                    </span>
+                    {project.subtitle ? <h6 className="project-accordion__subtitle">{project.subtitle}</h6> : null}
                     <span className="project-accordion__meta">
-                        <i>{project.date}</i>
-                        <i style={{ color: '#ADADAD', fontWeight: 100 }}>{project.role}</i>
+                        <span style={{ color: revDarkColor }}>{project.role}</span>
                     </span>
                 </div>
                 <FaChevronDown className={`project-accordion__icon ${open ? 'is-open' : ''}`} aria-hidden="true" />
@@ -91,7 +100,9 @@ const ProjectAccordion = ({ project }) => {
                 ))}
                 {project.code?.length ? (
                     <div className="project-accordion__section">
-                        <h4>{getCodeTitle(project.code)}</h4>
+                        <h4 style={{ color: darkColor, fontWeight: 600 }}>
+                            {getCodeTitle(project.code)}
+                        </h4>
                         <div className="project-code-grid">
                             {project.code.map((link) => (
                                 <a
@@ -128,7 +139,7 @@ const ProjectAccordion = ({ project }) => {
                 ) : null}
                 {project.related?.length ? (
                     <div className="project-accordion__section">
-                        <h4>Related</h4>
+                        <h4 style={{ color: darkColor, fontWeight: 600 }}>Related</h4>
                         <ul className="project-accordion__links">
                             {project.related.map((link) => (
                                 <li key={link.href}>
@@ -148,7 +159,7 @@ const ProjectAccordion = ({ project }) => {
 
                 {project.talks?.length ? (
                     <div className="project-accordion__section">
-                        <h4>Talks</h4>
+                        <h4 style={{ color: darkColor, fontWeight: 600 }}>Talks</h4>
                         <ul className="project-accordion__links">
 
                             {project.talks.map((talk) => (
