@@ -15,7 +15,7 @@ export const InformationNavbar = ({ setActiveSection }) => {
             <ul style={{ margin: 0, padding: 0, display: 'flex', gap: '1rem', listStyle: 'none' }}>
                 <li><a style={{ cursor: 'pointer', 'borderBottom': '1px solid var(--primary-color)' }} onClick={() => setActiveSection('home')}>Home</a></li>
                 <li><a style={{ cursor: 'pointer' }} onClick={() => setActiveSection('experience')}>Experience</a></li>
-                <li><a style={{ cursor: 'pointer' }} onClick={() => setActiveSection('libraries')}>Libraries</a></li>
+                <li><a style={{ cursor: 'pointer' }} onClick={() => setActiveSection('libraries')}>Open Source</a></li>
             </ul>
         </nav>
     )
@@ -27,13 +27,13 @@ export const InformationHomeCard = ({ }) => {
             <section id="about-me">
                 <h2>About me</h2>
                 <p>
-                    I am a graduated Computer Science Engineer from <a href="https://www.ing.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile (PUC)</a>, with a Major in Computing and Information Systems and a Minor in Data Science and Analytics.
+                    I am  a Computer Science Engineer graduate from <a href="https://www.ing.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile (PUC)</a>, with a Major in Computing and Information Systems and a Minor in Data Science and Analytics.
                     I am also an active collaborator in research projects with <a href="https://estacionpatagonia.uc.cl/">EPII UC</a> and <a href="https://www.linkedin.com/company/iot-uc/">IoT-UC Lab</a>, where I have contributed to the development of software solutions for environmental monitoring and scientific research.
 
                 </p>
             </section>
             <section id="research-interest">
-                <h2>Research interest</h2>
+                <h2>Research interests</h2>
                 <ul>
                     <li>Distributed and Data-Intensive Systems</li>
                     <li>Edge Computing and IoT Systems</li>
@@ -45,7 +45,7 @@ export const InformationHomeCard = ({ }) => {
 
             <section id="projects">
                 <h2>Projects</h2>
-                <p>I've worked on different software systems that move, process and serve data across cloud and edge environemnts. </p>
+                <p>I've worked on different software systems that move, process and serve data across cloud and edge environments. </p>
                 <Projects />
             </section>
         </>

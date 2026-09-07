@@ -195,7 +195,7 @@ export let WORK_EXPERIENCE = [
         "date": "Aug. 2025 - Present",
         "details": [
             "Collaborating on the data architecture and backend development of PISMA-WP, a socio-environmental monitoring platform for Western Patagonia.",
-            "Maintaining and improving ECHO with new features and optimizatios for data acquisition and monitoring",
+            "Maintaining and improving ECHO with new features and optimizations for data acquisition and monitoring",
             "Collaborating on the development of a wildlife monitoring system, applying computer vision, human-in-the-loop, and edge inference techniques to detect and classify wild species in remote environments.",
         ]
     },
@@ -214,7 +214,7 @@ export let WORK_EXPERIENCE = [
         "subtitle": "IoT-UC Laboratory",
         "date": "Aug. 2026 - Present",
         "details": [
-            "Providing support forthe deployment and implementation of the SCORPIO system."
+            "Providing support for the deployment and implementation of the SCORPIO system."
         ]
     }
 ];

@@ -80,19 +80,21 @@ const ProjectAccordion = ({ project }) => {
                 aria-expanded={open}
             >
                 <div className="project-accordion__summary">
-                    <span style={{display: 'inline-flex', margin: 0, padding: 0, justifyContent: 'space-between'}}>
-                        <h3 style={{color: darkColor}}>{project.title}</h3>
-                        <span style={{ color: revDarkColor }}>{project.date}</span>
+                    <span>
+                        <h3 style={{color: 'var(--primary-color)'}}>{project.title}</h3>
+                        
                     </span>
                     {project.subtitle ? <h6 className="project-accordion__subtitle">{project.subtitle}</h6> : null}
                     <span className="project-accordion__meta">
-                        <span style={{ color: revDarkColor }}>{project.role}</span>
+                        <span>{project.role}</span>
+                        <span>{project.date}</span>
                     </span>
                 </div>
                 <FaChevronDown className={`project-accordion__icon ${open ? 'is-open' : ''}`} aria-hidden="true" />
             </button>
 
             <div className={`project-accordion__content ${open ? 'is-open' : ''}`}>
+                <div className='hline'></div>
                 {project.description.map((desc, index) => (
                     <p key={`${project.title}-description-${index}`} className="project-accordion__description">
                         {renderDescriptionWithLinks(desc, project.description_links)}

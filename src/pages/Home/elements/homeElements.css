@@ -142,9 +142,13 @@
 }
 
 .hline {
-    border-bottom: 1px solid #dad6d6;
+    border-bottom: 1px dashed lightgray;
     width: 100%;
-    margin: 2rem 0;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+}
+.dark-mode .hline {
+    border-bottom: 1px dashed var(--dark-mode-border-color);
 }
 
 .card.project-accordion {
@@ -177,6 +181,7 @@
     flex: 1;
 }
 
+
 .project-accordion__summary h3 {
     margin: 0;
     
@@ -193,15 +198,37 @@
 }
 
 .project-accordion__meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    color: rgba(255, 255, 255, 0.65);
+    display:inline-flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    /* color: rgba(255, 255, 255, 0.65); */
     font-size: 0.9rem;
+
 }
-/* .project-accordion__summary span:first-child {
+.project-accordion__meta span {
+    color: var(--quinary-color);
+}
+.project-accordion__meta span:last-child {
+    font-style: italic;
+}
+
+.project-accordion__meta span:first-child {
+    color: var(--primary-color);
+}
+.project-accordion__summary span:first-child {
     margin-bottom: 1rem;
-} */
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+.project-accordion__summary span:first-child span {
+    font-size: 0.5rem;
+    
+}
 
 .project-accordion__icon {
     flex-shrink: 0;
@@ -457,6 +484,12 @@
     .home-card.project-card a.project-code-card {
         padding: 0.75rem;
     }
+
+    
+    /* .project-accordion__summary span:first-child span {
+        font-size: 0.7rem;
+        
+    } */
 }
 
 .library-item {
