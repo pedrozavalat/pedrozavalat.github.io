@@ -1,1 +1,1 @@
-export const ListToString = (list) => list.toString(' ');
+export const ListToString = (list) => list.toString(" ");

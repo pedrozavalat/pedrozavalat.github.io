@@ -1,6 +1,6 @@
-import './Horario.css';
-import { useEffect, useState } from 'react';
-import { apiKey, spreedID } from '../../api/googleapis';
+import "./Horario.css";
+import { useEffect, useState } from "react";
+import { apiKey, spreedID } from "../../api/googleapis";
 
 function Horario() {
   const [title, setTitle] = useState("");
@@ -9,16 +9,16 @@ function Horario() {
   const [days, setDays] = useState([]);
   const [hours, setHours] = useState([]);
   const [avaliability, setAvaliability] = useState({
-    "L": [],
-    "M": [],
-    "X": [],
-    "J": [],
-    "V": [],
-    "S": [],
+    L: [],
+    M: [],
+    X: [],
+    J: [],
+    V: [],
+    S: [],
   });
 
   const preprocessData = (data) => {
-    data.forEach(row => {
+    data.forEach((row) => {
       if (row.length === 5) {
         row.push(" ");
         row.push(" ");
@@ -26,21 +26,21 @@ function Horario() {
     });
 
     let firstRow = data[0];
-    const days = firstRow.slice(1, 7).map(day => day[0]);
+    const days = firstRow.slice(1, 7).map((day) => day[0]);
     setDays(days);
 
     const nrows = data.length;
     const ncols = data[0].length;
     const newData = {
-      "L": [],
-      "M": [],
-      "X": [],
-      "J": [],
-      "V": [],
-      "S": [],
+      L: [],
+      M: [],
+      X: [],
+      J: [],
+      V: [],
+      S: [],
     };
 
-    setHours(data.slice(1, nrows).map(row => row[0]));
+    setHours(data.slice(1, nrows).map((row) => row[0]));
 
     for (let i = 1; i < nrows; i++) {
       for (let j = 1; j < ncols; j++) {
@@ -76,7 +76,9 @@ function Horario() {
   useEffect(() => {
     // Realizar la solicitud GET
     const range = "C10:I22";
-    fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreedID}/values/${range}?key=${apiKey}`)
+    fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${spreedID}/values/${range}?key=${apiKey}`,
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log("Obteniendo datos ... ");
@@ -84,30 +86,34 @@ function Horario() {
         preprocessData(values);
       })
       .catch((error) => {
-        console.error('Error al obtener los datos:', error);
+        console.error("Error al obtener los datos:", error);
       })
       .finally(() => {
         console.log("Datos cargados");
         setIsOk(true);
       });
-
-    
   }, [spreedID, apiKey]);
 
   if (!isOk) {
-    return <p className='downloading'>Cargando ... </p>;
+    return <p className="downloading">Cargando ... </p>;
   }
 
   return (
     <>
-      <h2 id='title' style={{ textAlign: 'center' }}>{title}</h2>
-      <p id='subtitle' style={{ textAlign: 'center' }}>{subtitle}</p>
-      <div className='legends'>
+      <h2 id="title" style={{ textAlign: "center" }}>
+        {title}
+      </h2>
+      <p id="subtitle" style={{ textAlign: "center" }}>
+        {subtitle}
+      </p>
+      <div className="legends">
         <span>
-          <span className='circle D'></span><p>Disponible</p>
+          <span className="circle D"></span>
+          <p>Disponible</p>
         </span>
         <span>
-          <span className='circle ND'></span><p>No disponible</p>
+          <span className="circle ND"></span>
+          <p>No disponible</p>
         </span>
       </div>
 
@@ -117,7 +123,9 @@ function Horario() {
             <tr>
               <th></th>
               {days.map((day, index) => (
-                <th className='hora' key={index}>{day}</th>
+                <th className="hora" key={index}>
+                  {day}
+                </th>
               ))}
             </tr>
           </thead>
@@ -125,9 +133,11 @@ function Horario() {
           <tbody>
             {hours.map((hour, rowIndex) => (
               <tr key={rowIndex}>
-                <td id='hour'>{hour}</td>
+                <td id="hour">{hour}</td>
                 {Object.keys(avaliability).map((dayKey, colIndex) => (
-                  <td className={avaliability[dayKey][rowIndex]} key={colIndex}>{avaliability[dayKey][rowIndex]}</td>
+                  <td className={avaliability[dayKey][rowIndex]} key={colIndex}>
+                    {avaliability[dayKey][rowIndex]}
+                  </td>
                 ))}
               </tr>
             ))}

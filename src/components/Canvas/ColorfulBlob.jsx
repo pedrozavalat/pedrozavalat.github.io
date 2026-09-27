@@ -30,7 +30,9 @@ const ColorfulBlobs = () => {
     }
   }, []);
 
-  return <canvas ref={canvasRef} style={{ position: "absolute", zIndex: -1 }} />;
+  return (
+    <canvas ref={canvasRef} style={{ position: "absolute", zIndex: -1 }} />
+  );
 };
 
 export default ColorfulBlobs;
