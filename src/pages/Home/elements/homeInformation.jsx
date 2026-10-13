@@ -102,17 +102,27 @@ export const InformationHomeCard = ({}) => {
       </section>
       <section id="research-interest">
         <h2>Research interests</h2>
-        <ul>
-          <li>Distributed and Data-Intensive Systems</li>
-          <li>Edge Computing and IoT Systems</li>
-
-          <li>Applied ML for real-world problems</li>
-        </ul>
         <p>
-          My interests lie in interdisciplinary projects, particularly designing
-          data-intensive systems and applied ML solutions for real-world
-          problems.
+          I am interested in interdisciplinary projects at the intersection of
+          software engineering and scientific research, where I can design
+          comprehensive solutions by bringing together perspectives and
+          knowledge from different fields.
         </p>
+        <p>
+          In my field, I am passionate about developing distributed and
+          data-intensive systems, as well applied ML solutions for real-world
+          problems.{" "}
+        </p>
+
+        <p>
+          Some of my recent projects have been focused on the following topics:
+        </p>
+        <ul>
+          <li>Distributed and data-intensive systems.</li>
+          <li>Edge computing and IoT.</li>
+          <li>Environmental monitoring and scientific research.</li>
+          <li>Applied ML for real-world problems.</li>
+        </ul>
       </section>
     </>
   );

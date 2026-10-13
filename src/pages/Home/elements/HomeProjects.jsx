@@ -122,6 +122,7 @@ const ProjectAccordion = ({ project, open, onToggle }) => {
             {renderDescriptionWithLinks(desc, project.description_links)}
           </p>
         ))}
+        {/* Code */}
         {project.code?.length ? (
           <div className="project-accordion__section">
             <h4 style={{ color: darkColor, fontWeight: 600 }}>
@@ -162,12 +163,19 @@ const ProjectAccordion = ({ project, open, onToggle }) => {
             </div>
           </div>
         ) : null}
+        {/* Related  */}
         {project.related?.length ? (
           <div className="project-accordion__section">
             <h4 style={{ color: darkColor, fontWeight: 600 }}>Related</h4>
             <ul className="project-accordion__links">
               {project.related.map((link) => (
-                <li key={link.href}>
+                <li
+                  key={link.href}
+                  style={{ listStyle: link.icon ? "none" : "circle" }}
+                >
+                  {link.icon ? (
+                    <link.icon size={15} style={{ paddingRight: "10px" }} />
+                  ) : null}
                   <a
                     className="project-accordion__related-link"
                     href={link.href}

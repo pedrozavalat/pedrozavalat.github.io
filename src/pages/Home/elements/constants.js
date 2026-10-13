@@ -1,4 +1,11 @@
-import { SiPython, SiHomeassistantcommunitystore } from "react-icons/si";
+import {
+  SiPython,
+  SiHomeassistantcommunitystore,
+  SiViadeo,
+} from "react-icons/si";
+import { IoGlobeSharp } from "react-icons/io5";
+import { GoVideo } from "react-icons/go";
+
 export const PROJECTS = [
   {
     title: "ECHO & SAVIIA",
@@ -6,8 +13,8 @@ export const PROJECTS = [
     date: "March 2025 - Present",
     role: "Research Assistant",
     icon: {
-      light: "/public/icons/echo.png",
-      dark: "/public/icons/echo-dark.png",
+      light: "/icons/echo.png",
+      dark: "/icons/echo-dark.png",
     },
     description: [
       "SAVIIA (Sistema de Administración y Visualización de Información para la Investigación y Análisis) and ECHO (Edge Computing and Hardware Orchestration) form a hybrid data infrastructure for UC's Regional Field Stations Network (RCER). ECHO operates at the station level, coordinating local data acquisition, monitoring, and automation, while SAVIIA provides the centralized environment for storing, governing, integrating, and analyzing scientific and operational data. This edge-to-cloud architecture is designed to improve data traceability, reproducibility, and secure collaboration across research teams.",
@@ -41,16 +48,25 @@ export const PROJECTS = [
         label:
           "Raxlab - SAVIIA and ECHO: Trusted Data Infrastructures for Field Science",
         href: "https://www.raxlab.science/project/saviia2025/",
+        icon: IoGlobeSharp,
+      },
+      {
+        label:
+          "Developing strategies for the availability of scientific data from the RCER UC",
+        href: "https://youtube.com/shorts/DRyKthE8qGg?si=PAkfoDZGmZ7aky6U",
+        icon: GoVideo,
       },
       {
         label:
           "Miranda, F. (2025, July 23). Ciencia de datos desde la Patagonia: investigación de pregrado mejora la gestión de datos científicos en la Estación UC. Estacion Patagonia.",
         href: "https://estacionpatagonia.uc.cl/ipre/ciencia-de-datos-desde-la-patagonia-investigacion-de-pregrado-mejora-gestion-de-datos-cientificos-en-la-estacion-uc/",
+        icon: IoGlobeSharp,
       },
       {
         label:
           "Saffie, N. (2025, Dec 29). Estación Patagonia UC: Diez años haciendo ciencia en los confines de Chile",
         href: "https://www.uc.cl/noticias/estacion-patagonia-uc-diez-anos-haciendo-ciencia-en-los-confines-de-chile/",
+        icon: IoGlobeSharp,
       },
     ],
     talks: [
@@ -72,8 +88,8 @@ export const PROJECTS = [
       "I contribute as a software engineer to the development of a socio-environmental monitoring platform for Western Patagonia; Pisma. My work involves designing reproducible ETL pipelines and backend services to integrate satellite, geospatial, and locally collected data from the EPII UC station. I also support in the decision-making process and collaborate with colleagues from the Geography Institute to define different mechanisms for developing socio-environmental indicators in Western Patagonia.",
     ],
     icon: {
-      light: "/public/icons/pisma.png",
-      dark: "/public/icons/pisma-dark.png",
+      light: "/icons/pisma.png",
+      dark: "/icons/pisma-dark.png",
     },
     code: [
       // {
@@ -91,6 +107,7 @@ export const PROJECTS = [
         label:
           "Raxlab - PISMA-WP: Platform for Intelligent Socio‑Environmental Monitoring and Analysis",
         href: "https://www.raxlab.science/project/avanzauc2026/",
+        icon: IoGlobeSharp,
       },
     ],
   },
@@ -107,13 +124,14 @@ export const PROJECTS = [
       "The architecture combines containerized edge services, MQTT-based communication, local SQLite storage, REST APIs, and a web-based geospatial interface. It is designed to preserve data integrity and experimental traceability while remaining operational under intermittent connectivity, providing a scalable foundation for distributed satellite signal measurement stations.",
     ],
     icon: {
-      light: "/public/icons/sscorpio.png",
-      dark: "/public/icons/sscorpio-dark.png",
+      light: "/icons/sscorpio.png",
+      dark: "/icons/sscorpio-dark.png",
     },
     related: [
       {
         label: "IoT-UC Laboratory",
         href: "https://www.linkedin.com/company/iot-uc/",
+        icon: IoGlobeSharp,
       },
     ],
     code: [
@@ -134,14 +152,15 @@ export const PROJECTS = [
         image: "https://opengraph.githubassets.com/1/ScorpioIoTUC/scorpio-cli",
         type: "git",
       },
-      // {
-      //     label: "Scorpio Website",
-      //     href: 'https://github.com/ScorpioIoTUC/scorpio-frontend',
-      //     description: "Web platform for the visualization of the data collected by the Scorpio system. The code is written in React.",
-      //     image: "/scorpio/landing.png",
-      //     image_ref: "", // TODO: add image reference.
-      //     type: 'git',
-      // },
+      {
+        label: "Scorpio Website",
+        href: "https://scorpio.cpsrtc.cl/",
+        description:
+          "Web platform for the visualization of the data collected by the Scorpio system. ",
+        image: "/scorpio/landing.png",
+        image_ref: "",
+        type: "web",
+      },
       // {
       //     label: "Scorpio API",
       //     href: "https://github.com/ScorpioIoTUC/scorpio-backend",
@@ -161,8 +180,8 @@ export const PROJECTS = [
       "I am working on the development and evaluation of machine-learning models using camera-trap datasets collected at Estación Patagonia UC. My work involves experimenting with different computer vision architectures, preprocessing evaluation datasets, and designing MLOps pipelines. The project's overarching goal is to develop an MLOps and edge-inference infrastructure using the ECHO framework, deploying a species detector and classifier for local inference at remote scientific stations.",
     ],
     icon: {
-      light: "/public/icons/echoml.png",
-      dark: "/public/icons/echoml-dark.png",
+      light: "/icons/echoml.png",
+      dark: "/icons/echoml-dark.png",
     },
     code: [
       {

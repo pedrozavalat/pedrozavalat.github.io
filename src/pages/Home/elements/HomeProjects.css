@@ -153,6 +153,7 @@
 .project-accordion__icon {
   flex-shrink: 0;
   margin-top: 0.25rem;
+  color: var(--quinary-color);
   transition: transform 0.25s ease;
 }
 
