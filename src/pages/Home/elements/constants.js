@@ -32,6 +32,7 @@ export const PROJECTS = [
         description:
           "Home Assistant integration for monitoring, automating, and orchestrating scientific data-acquisition workflows at remote field stations.",
         image: "https://opengraph.githubassets.com/1/raxlab/echo",
+        image: "/echo/icon.png",
         type: "git",
       },
       {
@@ -92,15 +93,15 @@ export const PROJECTS = [
       dark: "/icons/pisma-dark.png",
     },
     code: [
-      // {
-      //   label: "Pisma WP Web Platform",
-      //   href: "https://pismawp.raxlab.science/",
-      //   description:
-      //     "Web platform for the visualization of socio-environmental indicators in Western Patagonia. The code is written in React.",
-      //   image: "/pisma/landing.png",
-      //   image_ref: "", // TODO: add image reference.
-      //   type: "web",
-      // },
+      {
+        label: "Pisma-WP website",
+        href: "https://pismawp.raxlab.science",
+        description:
+          "Web platform for the visualization of socio-environmental indicators in Western Patagonia. ",
+        image: "/pisma/landing.png",
+        image_ref: "", // TODO: add image reference.
+        type: "web",
+      },
     ],
     related: [
       {
@@ -187,7 +188,7 @@ export const PROJECTS = [
       {
         label: "ECHO ML Edge",
         href: "https://github.com/pedrozavalat/echo-ml-edge",
-        description: "Github repository.",
+        description: "",
         image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-ml-edge",
         type: "git",
       },

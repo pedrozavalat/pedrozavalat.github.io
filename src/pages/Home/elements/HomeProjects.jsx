@@ -122,9 +122,9 @@ const ProjectAccordion = ({ project, open, onToggle }) => {
             {renderDescriptionWithLinks(desc, project.description_links)}
           </p>
         ))}
-        {/* Code */}
+        {/* Code and websites links*/}
         {project.code?.length ? (
-          <div className="project-accordion__section">
+          <div className="project-accordion__section project-code-section">
             <h4 style={{ color: darkColor, fontWeight: 600 }}>
               {getCodeTitle(project.code)}
             </h4>
@@ -143,7 +143,7 @@ const ProjectAccordion = ({ project, open, onToggle }) => {
                     {link.label}
                   </span>
 
-                  {link.image ? (
+                  {link.image && link.type != 'git' ? (
                     <span className="project-code-card__image-wrap">
                       <img
                         className="project-code-card__image"
@@ -189,7 +189,7 @@ const ProjectAccordion = ({ project, open, onToggle }) => {
             </ul>
           </div>
         ) : null}
-
+        {/* Talks and presentations */}
         {project.talks?.length ? (
           <div className="project-accordion__section">
             <h4 style={{ color: darkColor, fontWeight: 600 }}>Talks</h4>
