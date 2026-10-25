@@ -185,13 +185,13 @@ export const PROJECTS = [
       dark: "/icons/echoml-dark.png",
     },
     code: [
-      {
-        label: "ECHO ML Edge",
-        href: "https://github.com/pedrozavalat/echo-ml-edge",
-        description: "",
-        image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-ml-edge",
-        type: "git",
-      },
+      // {
+      //   label: "ECHO ML Edge",
+      //   href: "https://github.com/pedrozavalat/echo-ml-edge",
+      //   description: "",
+      //   image: "https://opengraph.githubassets.com/1/pedrozavalat/echo-ml-edge",
+      //   type: "git",
+      // },
     ],
   },
 ];

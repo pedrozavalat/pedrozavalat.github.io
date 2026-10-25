@@ -92,7 +92,7 @@ const ProjectAccordion = ({ project, open, onToggle }) => {
             alt="project-icon"
           />
           <span>
-            <h3 style={{ color: "var(--primary-color)" }}>{project.title}</h3>
+            <h3 style={{ color: "var(--project-card-title-color)" }}>{project.title}</h3>
             {project.subtitle ? (
               <h6 className="project-accordion__subtitle">
                 {project.subtitle}

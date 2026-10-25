@@ -13,6 +13,7 @@ export function DarkModeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
     document.documentElement.classList.toggle("dark-mode", darkMode);
+    
   }, [darkMode]);
 
   useEffect(() => {

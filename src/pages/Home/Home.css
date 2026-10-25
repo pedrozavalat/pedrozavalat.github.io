@@ -1,14 +1,24 @@
 :root {
   /* --primary: #f3e2ff; */
-  --primary-color: #8eb770;
-  --secondary-color: #b4d83e;
+  --bg-color: #ecf0eb;
+  --card-bg-color: #F9FAFB;
+  --card-border-color: #e1e5f2;
+  --project-card-bg-color: #fff;
+  --project-card-title-color: #679436;
+  --border-color: #e1e5f2;
+  --footer-background-color: #ecf0eb;
+  --chars-color: #717744;
+  --primary-color: #2c5530;
+  --secondary-color: #73a942;
   --terciary-color: #d9e6b0;
   --quaternary-color: rgb(121, 120, 120);
   --quinary-color: rgb(147, 147, 144);
   --sixtary-color: #898b88;
-  --footer-background-color: white;
-  --dark-mode-bg-color: #010804;
-  --dark-mode-border-color: #494b4c;
+
+  --dark-mode-bg-color: #0c1900;
+  --dark-mode-card-bg-color: #010a04;
+  --dark-mode-section-card-bg-color: #0d1700;
+  --dark-mode-border-color: #233609;
   --dark-mode-text-color: rgb(197, 197, 197);
   font-family:
     system-ui,
@@ -27,22 +37,27 @@
 html,
 body,
 #root {
+  background-color: var(--bg-color);
   height: 100%;
   overflow: hidden;
+  margin: 0;
+
 }
 
 .home {
-  width: min(1100px, calc(100% - 2rem));
-  margin: 0 auto;
-  gap: 0;
+  width: 80vw;
+  height: 75vh;
+  /* background-color: var(--bg-color); */
+  margin: 2rem auto 1rem auto;
+  gap: 1rem;
   animation: appear 1s ease-in;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 1rem;
-  height: 100vh;
-  overflow: hidden;
+  color: var(--chars-color);
 }
+
 
 .home h1 {
   font-size: 3rem;
@@ -54,20 +69,22 @@ body,
 
 .home-card {
   border-color: transparent;
-  border-radius: 0.15rem;
+  border-radius: .75rem;
   transition: all 0.2s ease-in-out;
   height: 100%;
 }
 
 .home-card.profile-card {
   width: 25vw;
-  height: auto;
-  padding: 2rem;
+  height: 100%;
+  /* padding: 2rem; */
   margin: 0;
-  align-items: top;
+  align-items: center;
   max-height: calc(100vh - 2rem);
   overflow-y: auto;
   overscroll-behavior: contain;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
 }
 
 .home-card.section-card {
@@ -81,7 +98,17 @@ body,
   overscroll-behavior: contain;
   text-align: justify;
   margin-bottom: 3rem;
+  z-index: 2;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
 }
+.dark-mode .home-card.profile-card,
+.dark-mode .home-card.section-card {
+  /* background-color: var(--dark-mode-section-card-bg-color); */
+  background-color: #000602;
+  border-color: var(--dark-mode-border-color);
+}
+
 
 .home-card.section-card ul {
   padding-left: 1.5rem;
@@ -117,7 +144,7 @@ body,
 }
 
 .home-card.project-card {
-  border: #d0d1d3 1px solid;
+  border: var(--card-border-color) 1px solid;
   padding: 1rem;
   text-align: left;
   max-width: 100%;
@@ -231,7 +258,7 @@ body,
 
   height: auto;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 4px 16px 0 rgba(101, 101, 101, 0.103);
+  /* box-shadow: 0 4px 16px 0 rgba(101, 101, 101, 0.103); */
 }
 
 .home-card.profile-card h2 {
@@ -255,6 +282,14 @@ body,
 .dark-mode {
   --background-color: var(--dark-mode-bg-color);
   --text-color: var(--dark-mode-text-color);
+  --card-bg-color: #102219;
+  --border-color: #294735;
+  --project-card-title-color: #a8d879;
+  --primary-color: #a8d879;
+  --secondary-color: #c4e99b;
+  --chars-color: #d4ddd6;
+  --quaternary-color: #b9c7bd;
+  --quinary-color: #aebdb2;
 }
 
 .dark-mode body,
@@ -262,8 +297,23 @@ body,
   background-color: var(--background-color);
   color: var(--text-color);
 }
+
+.dark-mode html,
+.dark-mode body,
+.dark-mode #root,
+.dark-mode .home-card {
+  scrollbar-width: none;
+}
+
+.dark-mode html::-webkit-scrollbar,
+.dark-mode body::-webkit-scrollbar,
+.dark-mode #root::-webkit-scrollbar,
+.dark-mode .home-card::-webkit-scrollbar {
+  display: none;
+}
+
 .dark-mode li,
-a {
+.dark-mode a {
   color: var(--text-color);
 }
 .dark-mode p,
@@ -381,7 +431,7 @@ a {
     justify-content: flex-start;
     flex-direction: column;
     overflow: visible;
-    gap: 0;
+    gap: 1rem;
   }
 
   .home .card {
@@ -424,12 +474,18 @@ a {
   .home-card h4 {
     overflow-wrap: anywhere;
   }
+  .dark-mode-toggle {
+    top: 0rem;
+  }
+
 }
 
 @media (max-width: 600px) {
   .home {
     padding: 0.75rem;
+
   }
+
 
   .home-card.profile-card,
   .home-card.section-card {

@@ -9,8 +9,8 @@
   padding: 2rem;
   color: white;
   margin: 0 auto;
-  border-radius: 1rem;
-  background-color: #092234;
+  border-radius: 0.75rem;
+  background-color: var(--bg-color);
   transition: all 0.5s ease-in-out;
   left: 0;
   right: 0;
@@ -97,8 +97,14 @@
   color: var(--primary-color);
 }
 
+#work-experience h3 {
+  /* margin: 1.5rem 0 1rem 0; */
+  color: var(--project-card-title-color);
+}
+
 #education-experience h3 {
   margin: 1.5rem 0 1rem 0;
+  color: var(--project-card-title-color);
 }
 
 #education-experience #edu__date {
@@ -148,7 +154,7 @@
 }
 
 .hline {
-  border-bottom: 1px dashed lightgray;
+  border-bottom: 1px dashed var(--border-color);
   width: 100%;
   /* margin-top: 1rem; */
   margin-bottom: 1rem;
@@ -160,10 +166,14 @@
 
 .information-card-navbar {
   gap: 1rem;
-  background-color: white;
+  /* background-color: white; */
   z-index: 1000;
   position: relative;
-  padding: 0;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  width: max-content;
+  padding: .5rem 1rem;
+  border-radius: 0.5rem;
   margin: 0;
   display: flex;
   justify-content: flex-start;
@@ -183,7 +193,7 @@
 .information-card-navbar ul li a {
   font-size: 0.9rem;
   text-decoration: none;
-  color: var(--quinary-color);
+  color: var(--septenary-color);
   font-weight: bolder;
 }
 

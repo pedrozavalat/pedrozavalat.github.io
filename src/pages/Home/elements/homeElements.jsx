@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaMoon, FaSun } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import "./HomeElements.css";
 import Card from "../../../components/Card/Card";
-import MePhoto from "../../../../public/me3.png";
+import MePhoto from "../../../../public/me-patagonia.png";
 import { InformationCard } from "./homeInformation";
 import { useDarkMode } from "../HomeContext";
 
@@ -61,14 +61,12 @@ export const ProfileCard = ({}) => {
           <IoIosDocument
             style={{ verticalAlign: "middle", marginRight: 8, color: ghColor }}
           />
-          <span style={{ width: "5px", display: "inline-block" }}></span>
+          <span style={{  display: "inline-block" }}></span>
           <a
             href="docs/CV_Pedro_Pablo_Zavala_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            CV (English version)
-          </a>
+          >CV (English version)</a>
           {/* <span style={{ width: "5px", display: "inline-block" }}></span>
           <a
             href="docs/CV_Pedro_Pablo_Zavala_ES.pdf"

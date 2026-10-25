@@ -135,7 +135,7 @@ export const InformationExperienceCard = ({}) => {
       <article id="education-experience">
         {EDUCATION_EXPERIENCE.map((exp, index) => (
           <div key={index} style={{ marginBottom: "0.5rem", gap: "0" }}>
-            <h3 style={{}}>{exp.title}</h3>
+            <h3>{exp.title}</h3>
             <p id="edu__date" style={{ margin: 0 }}>
               {exp.date}
             </p>

@@ -30,14 +30,25 @@
 }
 
 .card.project-accordion {
+  background-color: var(--project-card-bg-color);
   overflow: hidden;
   border-radius: 0.35rem;
   margin: 1rem 1rem 1rem 1rem;
+  transition: all 0.5s ease-in-out;
 }
 
 .dark-mode .card.project-accordion {
+  background-color: var(--dark-mode-card-bg-color);
   border: 1px solid var(--dark-mode-border-color);
+  color: var(--dark-mode-text-color);
 }
+
+.dark-mode .project-accordion__meta span:first-child,
+.dark-mode .project-code-card__title,
+.dark-mode .project-accordion__section h4 {
+  color: var(--primary-color);
+}
+
 
 .project-accordion__image {
   border-radius: 0.35rem;
@@ -93,8 +104,9 @@
   flex: 1;
 }
 
-.project-accordion__summary h3 {
+.project-accordion__summary span h3 {
   margin: 0;
+  color: var(--project-card-title-color);
 }
 
 .project-accordion__summary h6 {
@@ -104,6 +116,10 @@
   line-height: 1rem;
   font-weight: 400;
   color: darkgray;
+}
+
+.dark-mode .project-accordion__summary h6 {
+  color: var(--dark-mode-text-color);
 }
 
 .project-accordion__summary > span {
@@ -188,6 +204,10 @@
   background-color: white;
 }
 
+.dark-mode .project-accordion__description.desc-link {
+  background-color: transparent;
+}
+
 .project-accordion__section {
   margin-top: 1rem;
 }
@@ -199,7 +219,7 @@
 }
 
 .dark-mode .project-accordion__section h4,
-a {
+.dark-mode .project-accordion__section a {
   color: var(--primary-color);
 }
 
@@ -242,13 +262,14 @@ a {
 
 .home-card.project-card a.project-code-card:hover,
 .home-card.project-card a.project-code-card:focus-visible {
-  transform: translateY(-1px);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 20px rgba(35, 35, 35, 0.08);
+  
+  border-color: var(--secondary-color);
+  /* box-shadow: 0 8px 20px rgba(35, 35, 35, 0.08); */
+
 }
 
 .dark-mode .home-card.project-card a.project-code-card {
-  background: var(--dark-mode-bg-color);
+  background: var(--dark-mode-section-card-bg-color);
   border-color: var(--dark-mode-border-color);
 }
 
@@ -277,6 +298,10 @@ a {
   background: #f6f6f6;
 }
 
+.dark-mode .project-code-card__image-wrap {
+  background: var(--dark-mode-bg-color);
+}
+
 .card img.project-code-card__image {
   display: block;
   width: 100%;
@@ -296,6 +321,10 @@ a {
   line-height: 1.6;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+.dark-mode .project-code-card__description {
+  color: var(--dark-mode-text-color);
 }
 
 .home-card.project-card .project-accordion__related-link {
